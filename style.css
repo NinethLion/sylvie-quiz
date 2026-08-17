@@ -1,0 +1,112 @@
+body {
+    /* 1. Insert your GIF here. Make sure the file name matches exactly! */
+    background-image: url("Background.gif"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    color: white;
+    font-family: 'PMDFont';
+    src: url('PKMD.ttf');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'PMDFont';
+    src: url('PKMD.ttf');
+}
+
+#dialogue-box {
+	width: 800px;
+	height: 450px;
+	margin: 0 auto;
+    border: 12px solid transparent; 
+    border-image-source: url("Border.png");
+    border-image-slice: 20; 
+	border-image-repeat: stretch;
+    padding: 30px;
+	background-clip:padding-box;
+    background-color: rgba(0, 0, 0, 0.7);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+#callisto-text {
+    font-family: 'PMDFont', monospace;
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    image-rendering: pixelated; 
+    text-shadow: 2px 2px 0px #000;
+}
+
+#character-portrait {
+    width: 80px;
+    height: 80px;
+    border: 3px solid #f8f8f8;
+    background-color: #262626;
+    position: absolute;
+    top: -50px;
+    left: 20px;
+    z-index: 20;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+#quiz-container {
+    position: relative;
+    width: 800px;
+}
+
+#character-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+	image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+button {
+    background: rgba(48, 48, 48, 0.6); 
+    color: #e0e0e0;
+    border: 2px solid #ce93d8; 
+    border-radius: 4px;
+	width: 500px;
+	margin: 5px auto;
+    font-family: inherit;
+    padding: 0px 18px; 
+	display: flex;
+    margin: 4px 0;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.4rem; 
+    transition: all 0.2s ease;
+	box-sizing: border-box;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+    gap: 4px;
+    margin-top: 5px;
+    padding: 0 10px;
+	max-height: 220px;
+	overflow-y: auto;
+}
+
+button:hover {
+    background: #7b1fa2;
+    border-color: #f8f8f8;
+    transform: scale(1.02);
+}

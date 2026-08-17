@@ -1,0 +1,2053 @@
+{
+  "settings": {
+    "quiz_title": "Sage of Silent Spring Quiz"
+  },
+  "pokemon_entries": [
+    {
+      "name": "Caterpie",
+      "type": ["Bug"],
+      "ability": ["Shield Dust"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Weedle",
+      "type": ["Bug", "Poison"],
+      "ability": ["Shield Dust"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Pidgey",
+      "type": ["Normal", "Flying"],
+      "ability": ["Keen Eye", "Tangled Feet"],
+      "hidden_ability": "Big Pecks"
+    },
+    {
+      "name": "Rattata",
+      "type": ["Normal"],
+      "ability": ["Run Away", "Guts"],
+      "hidden_ability": "Hustle"
+    },
+    {
+      "name": "Alolan Rattata",
+      "type": ["Dark", "Normal"],
+      "ability": ["Gluttony", "Hustle"],
+      "hidden_ability": "Thick Fat"
+    },
+    {
+      "name": "Spearow",
+      "type": ["Normal", "Flying"],
+      "ability": ["Keen Eye"],
+      "hidden_ability": "Sniper"
+    },
+    {
+      "name": "Ekans",
+      "type": ["Poison"],
+      "ability": ["Intimidate", "Shed Skin"],
+      "hidden_ability": "Unnerve"
+    },
+    {
+      "name": "Pichu",
+      "type": ["Electric"],
+      "ability": ["Static"],
+      "hidden_ability": "Lightning Rod"
+    },
+    {
+      "name": "Sandshrew",
+      "type": ["Ground"],
+      "ability": ["Sand Veil"],
+      "hidden_ability": "Sand Rush"
+    },
+    {
+      "name": "Nidoran-F",
+      "type": ["Poison"],
+      "ability": ["Poison Point", "Rivalry"],
+      "hidden_ability": "Hustle"
+    },
+    {
+      "name": "Nidoran-M",
+      "type": ["Poison"],
+      "ability": ["Poison Point", "Rivalry"],
+      "hidden_ability": "Hustle"
+    },
+    {
+      "name": "Vulpix",
+      "type": ["Fire"],
+      "ability": ["Flash Fire"],
+      "hidden_ability": "Drought"
+    },
+    {
+      "name": "Zubat",
+      "type": ["Poison", "Flying"],
+      "ability": ["Inner Focus"],
+      "hidden_ability": "Infiltrator"
+    },
+    {
+      "name": "Oddish",
+      "type": ["Grass", "Poison"],
+      "ability": ["Chlorophyll"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Paras",
+      "type": ["Bug", "Grass"],
+      "ability": ["Effect Spore", "Dry Skin"],
+      "hidden_ability": "Damp"
+    },
+    {
+      "name": "Venonat",
+      "type": ["Bug", "Poison"],
+      "ability": ["Compound Eyes", "Tinted Lens"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Diglett",
+      "type": ["Ground"],
+      "ability": ["Sand Veil", "Arena Trap"],
+      "hidden_ability": "Sand Force"
+    },
+    {
+      "name": "Meowth",
+      "type": ["Normal"],
+      "ability": ["Pickup", "Technician"],
+      "hidden_ability": "Unnerve"
+    },
+    {
+      "name": "Alolan Meowth",
+      "type": ["Dark"],
+      "ability": ["Pickup", "Technician"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Psyduck",
+      "type": ["Water"],
+      "ability": ["Damp", "Cloud Nine"],
+      "hidden_ability": "Swift Swim"
+    },
+    {
+      "name": "Mankey",
+      "type": ["Fighting"],
+      "ability": ["Vital Spirit", "Anger Point"],
+      "hidden_ability": "Defiant"
+    },
+    {
+      "name": "Growlithe",
+      "type": ["Fire"],
+      "ability": ["Intimidate", "Flash Fire"],
+      "hidden_ability": "Justified"
+    },
+    {
+      "name": "Hisuian Growlithe",
+      "type": ["Fire", "Rock"],
+      "ability": ["Intimidate", "Flash Fire"],
+      "hidden_ability": "Rock Head"
+    },
+    {
+      "name": "Poliwag",
+      "type": ["Water"],
+      "ability": ["Water Absorb", "Damp"],
+      "hidden_ability": "Swift Swim"
+    },
+    {
+      "name": "Abra",
+      "type": ["Psychic"],
+      "ability": ["Synchronize", "Inner Focus"],
+      "hidden_ability": "Magic Guard"
+    },
+    {
+      "name": "Machop",
+      "type": ["Fighting"],
+      "ability": ["Guts", "No Guard"],
+      "hidden_ability": "Steadfast"
+    },
+    {
+      "name": "Bellsprout",
+      "type": ["Grass", "Poison"],
+      "ability": ["Chlorophyll"],
+      "hidden_ability": "Gluttony"
+    },
+    {
+      "name": "Tentacool",
+      "type": ["Water", "Poison"],
+      "ability": ["Clear Body", "Liquid Ooze"],
+      "hidden_ability": "Rain Dish"
+    },
+    {
+      "name": "Geodude",
+      "type": ["Rock", "Ground"],
+      "ability": ["Rock Head", "Sturdy"],
+      "hidden_ability": "Sand Veil"
+    },
+    {
+      "name": "Alolan Geodude",
+      "type": ["Rock", "Electric"],
+      "ability": ["Magnet Pull", "Sturdy"],
+      "hidden_ability": "Galvanize"
+    },
+    {
+      "name": "Ponyta",
+      "type": ["Fire"],
+      "ability": ["Run Away", "Flash Fire"],
+      "hidden_ability": "Flame Body"
+    },
+    {
+      "name": "Slowpoke",
+      "type": ["Water", "Psychic"],
+      "ability": ["Oblivious", "Own Tempo"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Galarian Slowpoke",
+      "type": ["Psychic"],
+      "ability": ["Gluttony", "Own Tempo"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Farfetch'd",
+      "type": ["Normal", "Flying"],
+      "ability": ["Keen Eye", "Inner Focus"],
+      "hidden_ability": "Defiant"
+    },
+    {
+      "name": "Galarian Farfetch'd",
+      "type": ["Fighting"],
+      "ability": ["Steadfast"],
+      "hidden_ability": "Scrappy"
+    },
+    {
+      "name": "Doduo",
+      "type": ["Normal", "Flying"],
+      "ability": ["Run Away", "Early Bird"],
+      "hidden_ability": "Tangled Feet"
+    },
+    {
+      "name": "Seel",
+      "type": ["Water"],
+      "ability": ["Thick Fat", "Hydration"],
+      "hidden_ability": "Ice Body"
+    },
+    {
+      "name": "Grimer",
+      "type": ["Poison"],
+      "ability": ["Stench", "Sticky Hold"],
+      "hidden_ability": "Poison Touch"
+    },
+    {
+      "name": "Alolan Grimer",
+      "type": ["Poison", "Dark"],
+      "ability": ["Poison Touch", "Gluttony"],
+      "hidden_ability": "Power of Alchemy"
+    },
+    {
+      "name": "Shellder",
+      "type": ["Water"],
+      "ability": ["Shell Armor", "Skill Link"],
+      "hidden_ability": "Overcoat"
+    },
+    {
+      "name": "Gastly",
+      "type": ["Ghost", "Poison"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Voltorb",
+      "type": ["Electric"],
+      "ability": ["Soundproof", "Static"],
+      "hidden_ability": "Aftermath"
+    },
+    {
+      "name": "Hisuian Voltorb",
+      "type": ["Electric", "Grass"],
+      "ability": ["Soundproof", "Static"],
+      "hidden_ability": "Aftermath"
+    },
+    {
+      "name": "Exeggcute",
+      "type": ["Grass", "Psychic"],
+      "ability": ["Chlorophyll"],
+      "hidden_ability": "Harvest"
+    },
+    {
+      "name": "Cubone",
+      "type": ["Ground"],
+      "ability": ["Rock Head", "Lightning Rod"],
+      "hidden_ability": "Battle Armor"
+    },
+    {
+      "name": "Tyrogue",
+      "type": ["Fighting"],
+      "ability": ["Guts", "Steadfast"],
+      "hidden_ability": "Vital Spirit"
+    },
+    {
+      "name": "Lickitung",
+      "type": ["Normal"],
+      "ability": ["Own Tempo", "Oblivious"],
+      "hidden_ability": "Cloud Nine"
+    },
+    {
+      "name": "Koffing",
+      "type": ["Poison"],
+      "ability": ["Levitate", "Neutralizing Gas"],
+      "hidden_ability": "Stench"
+    },
+    {
+      "name": "Rhyhorn",
+      "type": ["Ground", "Rock"],
+      "ability": ["Lightning Rod", "Rock Head"],
+      "hidden_ability": "Reckless"
+    },
+    {
+      "name": "Happiny",
+      "type": ["Normal"],
+      "ability": ["Natural Cure", "Serene Grace"],
+      "hidden_ability": "Friend Guard"
+    },
+    {
+      "name": "Tangela",
+      "type": ["Grass"],
+      "ability": ["Chlorophyll", "Leaf Guard"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Kangaskhan",
+      "type": ["Normal"],
+      "ability": ["Early Bird", "Scrappy"],
+      "hidden_ability": "Inner Focus"
+    },
+    {
+      "name": "Goldeen",
+      "type": ["Water"],
+      "ability": ["Swift Swim", "Water Veil"],
+      "hidden_ability": "Lightning Rod"
+    },
+    {
+      "name": "Staryu",
+      "type": ["Water"],
+      "ability": ["Illuminate", "Natural Cure"],
+      "hidden_ability": "Analytic"
+    },
+    {
+      "name": "Scyther",
+      "type": ["Bug", "Flying"],
+      "ability": ["Swarm", "Technician"],
+      "hidden_ability": "Steadfast"
+    },
+    {
+      "name": "Smoochum",
+      "type": ["Ice", "Psychic"],
+      "ability": ["Oblivious", "Forewarn"],
+      "hidden_ability": "Hydration"
+    },
+    {
+      "name": "Elekid",
+      "type": ["Electric"],
+      "ability": ["Static"],
+      "hidden_ability": "Vital Spirit"
+    },
+    {
+      "name": "Magby",
+      "type": ["Fire"],
+      "ability": ["Flame Body"],
+      "hidden_ability": "Vital Spirit"
+    },
+    {
+      "name": "Pinsir",
+      "type": ["Bug"],
+      "ability": ["Hyper Cutter", "Mold Breaker"],
+      "hidden_ability": "Moxie"
+    },
+    {
+      "name": "Tauros",
+      "type": ["Normal"],
+      "ability": ["Intimidate", "Anger Point"],
+      "hidden_ability": "Sheer Force"
+    },
+    {
+      "name": "Paldean Tauros (Combat)",
+      "type": ["Fighting"],
+      "ability": ["Intimidate", "Anger Point"],
+      "hidden_ability": "Cud Chew"
+    },
+    {
+      "name": "Paldean Tauros (Blaze)",
+      "type": ["Fighting", "Fire"],
+      "ability": ["Intimidate", "Anger Point"],
+      "hidden_ability": "Cud Chew"
+    },
+    {
+      "name": "Paldean Tauros (Aqua)",
+      "type": ["Fighting", "Water"],
+      "ability": ["Intimidate", "Anger Point"],
+      "hidden_ability": "Cud Chew"
+    },
+    {
+      "name": "Magikarp",
+      "type": ["Water"],
+      "ability": ["Swift Swim"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Lapras",
+      "type": ["Water", "Ice"],
+      "ability": ["Water Absorb", "Shell Armor"],
+      "hidden_ability": "Hydration"
+    },
+    {
+      "name": "Ditto",
+      "type": ["Normal"],
+      "ability": ["Limber"],
+      "hidden_ability": "Imposter"
+    },
+    {
+      "name": "Eevee",
+      "type": ["Normal"],
+      "ability": ["Run Away", "Adaptability"],
+      "hidden_ability": "Anticipation"
+    },
+    {
+      "name": "Porygon",
+      "type": ["Normal"],
+      "ability": ["Trace", "Download"],
+      "hidden_ability": "Analytic"
+    },
+    {
+      "name": "Omanyte",
+      "type": ["Rock", "Water"],
+      "ability": ["Swift Swim", "Shell Armor"],
+      "hidden_ability": "Weak Armor"
+    },
+    {
+      "name": "Kabuto",
+      "type": ["Rock", "Water"],
+      "ability": ["Swift Swim", "Battle Armor"],
+      "hidden_ability": "Weak Armor"
+    },
+    {
+      "name": "Aerodactyl",
+      "type": ["Rock", "Flying"],
+      "ability": ["Rock Head", "Pressure"],
+      "hidden_ability": "Unnerve"
+    },
+    {
+      "name": "Munchlax",
+      "type": ["Normal"],
+      "ability": ["Pickup", "Thick Fat"],
+      "hidden_ability": "Gluttony"
+    },
+    {
+      "name": "Sentret",
+      "type": ["Normal"],
+      "ability": ["Run Away", "Keen Eye"],
+      "hidden_ability": "Frisk"
+    },
+    {
+      "name": "Hoothoot",
+      "type": ["Normal", "Flying"],
+      "ability": ["Insomnia", "Keen Eye"],
+      "hidden_ability": "Tinted Lens"
+    },
+    {
+      "name": "Ledyba",
+      "type": ["Bug", "Flying"],
+      "ability": ["Swarm", "Early Bird"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Spinarak",
+      "type": ["Bug", "Poison"],
+      "ability": ["Swarm", "Insomnia"],
+      "hidden_ability": "Sniper"
+    },
+    {
+      "name": "Chinchou",
+      "type": ["Water", "Electric"],
+      "ability": ["Volt Absorb", "Illuminate"],
+      "hidden_ability": "Water Absorb"
+    },
+    {
+      "name": "Natu",
+      "type": ["Psychic", "Flying"],
+      "ability": ["Synchronize", "Early Bird"],
+      "hidden_ability": "Magic Bounce"
+    },
+    {
+      "name": "Mareep",
+      "type": ["Electric"],
+      "ability": ["Static"],
+      "hidden_ability": "Plus"
+    },
+    {
+      "name": "Hoppip",
+      "type": ["Grass", "Flying"],
+      "ability": ["Chlorophyll", "Leaf Guard"],
+      "hidden_ability": "Infiltrator"
+    },
+    {
+      "name": "Aipom",
+      "type": ["Normal"],
+      "ability": ["Run Away", "Pickup"],
+      "hidden_ability": "Skill Link"
+    },
+    {
+      "name": "Sunkern",
+      "type": ["Grass"],
+      "ability": ["Chlorophyll", "Solar Power"],
+      "hidden_ability": "Early Bird"
+    },
+    {
+      "name": "Yanma",
+      "type": ["Bug", "Flying"],
+      "ability": ["Speed Boost", "Compound Eyes"],
+      "hidden_ability": "Frisk"
+    },
+    {
+      "name": "Wooper",
+      "type": ["Water", "Ground"],
+      "ability": ["Damp", "Water Absorb"],
+      "hidden_ability": "Unaware"
+    },
+    {
+      "name": "Paldean Wooper",
+      "type": ["Poison", "Ground"],
+      "ability": ["Poison Point", "Water Absorb"],
+      "hidden_ability": "Unaware"
+    },
+    {
+      "name": "Murkrow",
+      "type": ["Dark", "Flying"],
+      "ability": ["Insomnia", "Super Luck"],
+      "hidden_ability": "Prankster"
+    },
+    {
+      "name": "Misdreavus",
+      "type": ["Ghost"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Unown",
+      "type": ["Psychic"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Girafarig",
+      "type": ["Normal", "Psychic"],
+      "ability": ["Inner Focus", "Early Bird"],
+      "hidden_ability": "Sap Sipper"
+    },
+    {
+      "name": "Dunsparce",
+      "type": ["Normal"],
+      "ability": ["Serene Grace", "Run Away"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Gligar",
+      "type": ["Ground", "Flying"],
+      "ability": ["Hyper Cutter", "Sand Veil"],
+      "hidden_ability": "Immunity"
+    },
+    {
+      "name": "Qwilfish",
+      "type": ["Water", "Poison"],
+      "ability": ["Poison Point", "Swift Swim"],
+      "hidden_ability": "Intimidate"
+    },
+    {
+      "name": "Hisuian Qwilfish",
+      "type": ["Dark", "Poison"],
+      "ability": ["Poison Point", "Swift Swim"],
+      "hidden_ability": "Intimidate"
+    },
+    {
+      "name": "Shuckle",
+      "type": ["Bug", "Rock"],
+      "ability": ["Sturdy", "Gluttony"],
+      "hidden_ability": "Contrary"
+    },
+    {
+      "name": "Heracross",
+      "type": ["Bug", "Fighting"],
+      "ability": ["Swarm", "Guts"],
+      "hidden_ability": "Moxie"
+    },
+    {
+      "name": "Sneasel",
+      "type": ["Dark", "Ice"],
+      "ability": ["Inner Focus", "Keen Eye"],
+      "hidden_ability": "Pickpocket"
+    },
+    {
+      "name": "Hisuian Sneasel",
+      "type": ["Fighting", "Poison"],
+      "ability": ["Inner Focus", "Keen Eye"],
+      "hidden_ability": "Pickpocket"
+    },
+    {
+      "name": "Teddiursa",
+      "type": ["Normal"],
+      "ability": ["Pickup", "Quick Feet"],
+      "hidden_ability": "Honey Gather"
+    },
+    {
+      "name": "Slugma",
+      "type": ["Fire"],
+      "ability": ["Magma Armor", "Flame Body"],
+      "hidden_ability": "Weak Armor"
+    },
+    {
+      "name": "Swinub",
+      "type": ["Ice", "Ground"],
+      "ability": ["Oblivious", "Snow Cloak"],
+      "hidden_ability": "Thick Fat"
+    },
+    {
+      "name": "Corsola",
+      "type": ["Water", "Rock"],
+      "ability": ["Hustle", "Natural Cure"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Galarian Corsola",
+      "type": ["Ghost"],
+      "ability": ["Weak Armor"],
+      "hidden_ability": "Cursed Body"
+    },
+    {
+      "name": "Remoraid",
+      "type": ["Water"],
+      "ability": ["Hustle", "Sniper"],
+      "hidden_ability": "Moody"
+    },
+    {
+      "name": "Delibird",
+      "type": ["Ice", "Flying"],
+      "ability": ["Vital Spirit", "Hustle"],
+      "hidden_ability": "Insomnia"
+    },
+    {
+      "name": "Houndour",
+      "type": ["Dark", "Fire"],
+      "ability": ["Early Bird", "Flash Fire"],
+      "hidden_ability": "Unnerve"
+    },
+    {
+      "name": "Phanpy",
+      "type": ["Ground"],
+      "ability": ["Pickup"],
+      "hidden_ability": "Sand Veil"
+    },
+    {
+      "name": "Stantler",
+      "type": ["Normal"],
+      "ability": ["Intimidate", "Frisk"],
+      "hidden_ability": "Sap Sipper"
+    },
+    {
+      "name": "Smeargle",
+      "type": ["Normal"],
+      "ability": ["Own Tempo", "Technician"],
+      "hidden_ability": "Moody"
+    },
+    {
+      "name": "Miltank",
+      "type": ["Normal"],
+      "ability": ["Thick Fat", "Scrappy"],
+      "hidden_ability": "Sap Sipper"
+    },
+    {
+      "name": "Wynaut",
+      "type": ["Psychic"],
+      "ability": ["Shadow Tag"],
+      "hidden_ability": "Telepathy"
+    },
+    {
+      "name": "Bonsly",
+      "type": ["Rock"],
+      "ability": ["Sturdy", "Rock Head"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Mantyke",
+      "type": ["Water", "Flying"],
+      "ability": ["Swift Swim", "Water Absorb"],
+      "hidden_ability": "Water Veil"
+    },
+    {
+      "name": "Poochyena",
+      "type": ["Dark"],
+      "ability": ["Run Away", "Quick Feet"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Zigzagoon",
+      "type": ["Normal"],
+      "ability": ["Pickup", "Gluttony"],
+      "hidden_ability": "Quick Feet"
+    },
+    {
+      "name": "Galarian Zigzagoon",
+      "type": ["Dark", "Normal"],
+      "ability": ["Pickup", "Gluttony"],
+      "hidden_ability": "Quick Feet"
+    },
+    {
+      "name": "Wurmple",
+      "type": ["Bug"],
+      "ability": ["Shield Dust"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Lotad",
+      "type": ["Water", "Grass"],
+      "ability": ["Swift Swim", "Rain Dish"],
+      "hidden_ability": "Own Tempo"
+    },
+    {
+      "name": "Seedot",
+      "type": ["Grass"],
+      "ability": ["Chlorophyll", "Early Bird"],
+      "hidden_ability": "Pickpocket"
+    },
+    {
+      "name": "Taillow",
+      "type": ["Normal", "Flying"],
+      "ability": ["Guts"],
+      "hidden_ability": "Scrappy"
+    },
+    {
+      "name": "Wingull",
+      "type": ["Water", "Flying"],
+      "ability": ["Keen Eye", "Hydration"],
+      "hidden_ability": "Rain Dish"
+    },
+    {
+      "name": "Surskit",
+      "type": ["Bug", "Water"],
+      "ability": ["Swift Swim"],
+      "hidden_ability": "Rain Dish"
+    },
+    {
+      "name": "Shroomish",
+      "type": ["Grass"],
+      "ability": ["Effect Spore", "Poison Heal"],
+      "hidden_ability": "Quick Feet"
+    },
+    {
+      "name": "Slakoth",
+      "type": ["Normal"],
+      "ability": ["Truant"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Nincada",
+      "type": ["Bug", "Ground"],
+      "ability": ["Compound Eyes"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Whismur",
+      "type": ["Normal"],
+      "ability": ["Soundproof"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Makuhita",
+      "type": ["Fighting"],
+      "ability": ["Thick Fat", "Guts"],
+      "hidden_ability": "Sheer Force"
+    },
+    {
+      "name": "Skitty",
+      "type": ["Normal"],
+      "ability": ["Cute Charm", "Normalize"],
+      "hidden_ability": "Wonder Skin"
+    },
+    {
+      "name": "Sableye",
+      "type": ["Dark", "Ghost"],
+      "ability": ["Keen Eye", "Stall"],
+      "hidden_ability": "Prankster"
+    },
+    {
+      "name": "Meditite",
+      "type": ["Fighting", "Psychic"],
+      "ability": ["Pure Power"],
+      "hidden_ability": "Telepathy"
+    },
+    {
+      "name": "Electrike",
+      "type": ["Electric"],
+      "ability": ["Static", "Lightning Rod"],
+      "hidden_ability": "Minus"
+    },
+    {
+      "name": "Plusle",
+      "type": ["Electric"],
+      "ability": ["Plus"],
+      "hidden_ability": "Lightning Rod"
+    },
+    {
+      "name": "Minun",
+      "type": ["Electric"],
+      "ability": ["Minus"],
+      "hidden_ability": "Volt Absorb"
+    },
+    {
+      "name": "Volbeat",
+      "type": ["Bug"],
+      "ability": ["Illuminate", "Swarm"],
+      "hidden_ability": "Prankster"
+    },
+    {
+      "name": "Illumise",
+      "type": ["Bug"],
+      "ability": ["Oblivious", "Tinted Lens"],
+      "hidden_ability": "Prankster"
+    },
+    {
+      "name": "Gulpin",
+      "type": ["Poison"],
+      "ability": ["Liquid Ooze", "Sticky Hold"],
+      "hidden_ability": "Gluttony"
+    },
+    {
+      "name": "Carvanha",
+      "type": ["Water", "Dark"],
+      "ability": ["Rough Skin"],
+      "hidden_ability": "Speed Boost"
+    },
+    {
+      "name": "Wailmer",
+      "type": ["Water"],
+      "ability": ["Water Veil", "Oblivious"],
+      "hidden_ability": "Pressure"
+    },
+    {
+      "name": "Numel",
+      "type": ["Fire", "Ground"],
+      "ability": ["Oblivious", "Simple"],
+      "hidden_ability": "Own Tempo"
+    },
+    {
+      "name": "Torkoal",
+      "type": ["Fire"],
+      "ability": ["White Smoke", "Drought"],
+      "hidden_ability": "Shell Armor"
+    },
+    {
+      "name": "Spoink",
+      "type": ["Psychic"],
+      "ability": ["Thick Fat", "Own Tempo"],
+      "hidden_ability": "Gluttony"
+    },
+    {
+      "name": "Spinda",
+      "type": ["Normal"],
+      "ability": ["Own Tempo", "Tangled Feet"],
+      "hidden_ability": "Contrary"
+    },
+    {
+      "name": "Cacnea",
+      "type": ["Grass"],
+      "ability": ["Sand Veil"],
+      "hidden_ability": "Water Absorb"
+    },
+    {
+      "name": "Zangoose",
+      "type": ["Normal"],
+      "ability": ["Immunity"],
+      "hidden_ability": "Toxic Boost"
+    },
+    {
+      "name": "Seviper",
+      "type": ["Poison"],
+      "ability": ["Shed Skin"],
+      "hidden_ability": "Infiltrator"
+    },
+    {
+      "name": "Lunatone",
+      "type": ["Rock", "Psychic"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Solrock",
+      "type": ["Rock", "Psychic"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Barboach",
+      "type": ["Water", "Ground"],
+      "ability": ["Oblivious", "Anticipation"],
+      "hidden_ability": "Hydration"
+    },
+    {
+      "name": "Corphish",
+      "type": ["Water"],
+      "ability": ["Hyper Cutter", "Shell Armor"],
+      "hidden_ability": "Adaptability"
+    },
+    {
+      "name": "Baltoy",
+      "type": ["Ground", "Psychic"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Lileep",
+      "type": ["Rock", "Grass"],
+      "ability": ["Suction Cups"],
+      "hidden_ability": "Storm Drain"
+    },
+    {
+      "name": "Anorith",
+      "type": ["Rock", "Bug"],
+      "ability": ["Battle Armor"],
+      "hidden_ability": "Swift Swim"
+    },
+    {
+      "name": "Feebas",
+      "type": ["Water"],
+      "ability": ["Swift Swim", "Oblivious"],
+      "hidden_ability": "Adaptability"
+    },
+    {
+      "name": "Castform",
+      "type": ["Normal"],
+      "ability": ["Forecast"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Kecleon",
+      "type": ["Normal"],
+      "ability": ["Color Change"],
+      "hidden_ability": "Protean"
+    },
+    {
+      "name": "Shuppet",
+      "type": ["Ghost"],
+      "ability": ["Insomnia", "Frisk"],
+      "hidden_ability": "Cursed Body"
+    },
+    {
+      "name": "Duskull",
+      "type": ["Ghost"],
+      "ability": ["Levitate"],
+      "hidden_ability": "Frisk"
+    },
+    {
+      "name": "Tropius",
+      "type": ["Grass", "Flying"],
+      "ability": ["Chlorophyll", "Solar Power"],
+      "hidden_ability": "Harvest"
+    },
+    {
+      "name": "Absol",
+      "type": ["Dark"],
+      "ability": ["Pressure", "Super Luck"],
+      "hidden_ability": "Justified"
+    },
+    {
+      "name": "Snorunt",
+      "type": ["Ice"],
+      "ability": ["Inner Focus", "Ice Body"],
+      "hidden_ability": "Moody"
+    },
+    {
+      "name": "Spheal",
+      "type": ["Ice", "Water"],
+      "ability": ["Thick Fat", "Ice Body"],
+      "hidden_ability": "Oblivious"
+    },
+    {
+      "name": "Clamperl",
+      "type": ["Water"],
+      "ability": ["Shell Armor"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Relicanth",
+      "type": ["Water", "Rock"],
+      "ability": ["Swift Swim", "Rock Head"],
+      "hidden_ability": "Sturdy"
+    },
+    {
+      "name": "Luvdisc",
+      "type": ["Water"],
+      "ability": ["Swift Swim"],
+      "hidden_ability": "Hydration"
+    },
+    {
+      "name": "Budew",
+      "type": ["Grass", "Poison"],
+      "ability": ["Natural Cure", "Poison Point"],
+      "hidden_ability": "Leaf Guard"
+    },
+    {
+      "name": "Chingling",
+      "type": ["Psychic"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Starly",
+      "type": ["Normal", "Flying"],
+      "ability": ["Keen Eye"],
+      "hidden_ability": "Reckless"
+    },
+    {
+      "name": "Bidoof",
+      "type": ["Normal"],
+      "ability": ["Simple", "Unaware"],
+      "hidden_ability": "Moody"
+    },
+    {
+      "name": "Kricketot",
+      "type": ["Bug"],
+      "ability": ["Shed Skin"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Shinx",
+      "type": ["Electric"],
+      "ability": ["Rivalry", "Intimidate"],
+      "hidden_ability": "Guts"
+    },
+    {
+      "name": "Cranidos",
+      "type": ["Rock"],
+      "ability": ["Mold Breaker"],
+      "hidden_ability": "Sheer Force"
+    },
+    {
+      "name": "Burmy",
+      "type": ["Bug"],
+      "ability": ["Shed Skin"],
+      "hidden_ability": "Overcoat"
+    },
+    {
+      "name": "Combee",
+      "type": ["Bug", "Flying"],
+      "ability": ["Honey Gather"],
+      "hidden_ability": "Hustle"
+    },
+    {
+      "name": "Pachirisu",
+      "type": ["Electric"],
+      "ability": ["Run Away", "Pickup"],
+      "hidden_ability": "Volt Absorb"
+    },
+    {
+      "name": "Buizel",
+      "type": ["Water"],
+      "ability": ["Swift Swim"],
+      "hidden_ability": "Water Veil"
+    },
+    {
+      "name": "Cherubi",
+      "type": ["Grass"],
+      "ability": ["Chlorophyll"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Shellos",
+      "type": ["Water"],
+      "ability": ["Sticky Hold", "Storm Drain"],
+      "hidden_ability": "Sand Force"
+    },
+    {
+      "name": "Drifloon",
+      "type": ["Ghost", "Flying"],
+      "ability": ["Aftermath", "Unburden"],
+      "hidden_ability": "Flare Boost"
+    },
+    {
+      "name": "Buneary",
+      "type": ["Normal"],
+      "ability": ["Run Away", "Klutz"],
+      "hidden_ability": "Limber"
+    },
+    {
+      "name": "Glameow",
+      "type": ["Normal"],
+      "ability": ["Limber", "Own Tempo"],
+      "hidden_ability": "Keen Eye"
+    },
+    {
+      "name": "Stunky",
+      "type": ["Poison", "Dark"],
+      "ability": ["Stench", "Aftermath"],
+      "hidden_ability": "Keen Eye"
+    },
+    {
+      "name": "Chatot",
+      "type": ["Normal", "Flying"],
+      "ability": ["Keen Eye", "Tangled Feet"],
+      "hidden_ability": "Big Pecks"
+    },
+    {
+      "name": "Spiritomb",
+      "type": ["Ghost", "Dark"],
+      "ability": ["Pressure"],
+      "hidden_ability": "Infiltrator"
+    },
+    {
+      "name": "Hippopotas",
+      "type": ["Ground"],
+      "ability": ["Sand Stream"],
+      "hidden_ability": "Sand Force"
+    },
+    {
+      "name": "Skorupi",
+      "type": ["Poison", "Bug"],
+      "ability": ["Battle Armor", "Sniper"],
+      "hidden_ability": "Keen Eye"
+    },
+    {
+      "name": "Croagunk",
+      "type": ["Poison", "Fighting"],
+      "ability": ["Anticipation", "Dry Skin"],
+      "hidden_ability": "Poison Touch"
+    },
+    {
+      "name": "Carnivine",
+      "type": ["Grass"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Finneon",
+      "type": ["Water"],
+      "ability": ["Swift Swim", "Storm Drain"],
+      "hidden_ability": "Water Veil"
+    },
+    {
+      "name": "Snover",
+      "type": ["Grass", "Ice"],
+      "ability": ["Snow Warning"],
+      "hidden_ability": "Soundproof"
+    },
+    {
+      "name": "Rotom",
+      "type": ["Electric", "Ghost"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Patrat",
+      "type": ["Normal"],
+      "ability": ["Run Away", "Keen Eye"],
+      "hidden_ability": "Analytic"
+    },
+    {
+      "name": "Lillipup",
+      "type": ["Normal"],
+      "ability": ["Vital Spirit", "Pickup"],
+      "hidden_ability": "Run Away"
+    },
+    {
+      "name": "Purrloin",
+      "type": ["Dark"],
+      "ability": ["Limber", "Unburden"],
+      "hidden_ability": "Prankster"
+    },
+    {
+      "name": "Pansage",
+      "type": ["Grass"],
+      "ability": ["Gluttony"],
+      "hidden_ability": "Overgrow"
+    },
+    {
+      "name": "Pansear",
+      "type": ["Fire"],
+      "ability": ["Gluttony"],
+      "hidden_ability": "Blaze"
+    },
+    {
+      "name": "Panpour",
+      "type": ["Water"],
+      "ability": ["Gluttony"],
+      "hidden_ability": "Torrent"
+    },
+    {
+      "name": "Munna",
+      "type": ["Psychic"],
+      "ability": ["Forewarn", "Synchronize"],
+      "hidden_ability": "Telepathy"
+    },
+    {
+      "name": "Pidove",
+      "type": ["Normal", "Flying"],
+      "ability": ["Big Pecks", "Super Luck"],
+      "hidden_ability": "Rivalry"
+    },
+    {
+      "name": "Blitzle",
+      "type": ["Electric"],
+      "ability": ["Lightning Rod", "Motor Drive"],
+      "hidden_ability": "Sap Sipper"
+    },
+    {
+      "name": "Roggenrola",
+      "type": ["Rock"],
+      "ability": ["Sturdy", "Weak Armor"],
+      "hidden_ability": "Sand Force"
+    },
+    {
+      "name": "Woobat",
+      "type": ["Psychic", "Flying"],
+      "ability": ["Unaware", "Klutz"],
+      "hidden_ability": "Simple"
+    },
+    {
+      "name": "Audino",
+      "type": ["Normal"],
+      "ability": ["Healer", "Regenerator"],
+      "hidden_ability": "Klutz"
+    },
+    {
+      "name": "Timburr",
+      "type": ["Fighting"],
+      "ability": ["Guts", "Sheer Force"],
+      "hidden_ability": "Iron Fist"
+    },
+    {
+      "name": "Tympole",
+      "type": ["Water"],
+      "ability": ["Swift Swim", "Hydration"],
+      "hidden_ability": "Water Absorb"
+    },
+    {
+      "name": "Throh",
+      "type": ["Fighting"],
+      "ability": ["Guts", "Inner Focus"],
+      "hidden_ability": "Mold Breaker"
+    },
+    {
+      "name": "Sawk",
+      "type": ["Fighting"],
+      "ability": ["Sturdy", "Inner Focus"],
+      "hidden_ability": "Mold Breaker"
+    },
+    {
+      "name": "Sewaddle",
+      "type": ["Bug", "Grass"],
+      "ability": ["Swarm", "Chlorophyll"],
+      "hidden_ability": "Overcoat"
+    },
+    {
+      "name": "Venipede",
+      "type": ["Bug", "Poison"],
+      "ability": ["Poison Point", "Swarm"],
+      "hidden_ability": "Speed Boost"
+    },
+    {
+      "name": "Petilil",
+      "type": ["Grass"],
+      "ability": ["Chlorophyll", "Own Tempo"],
+      "hidden_ability": "Leaf Guard"
+    },
+    {
+      "name": "Basculin",
+      "type": ["Water"],
+      "ability": ["Reckless", "Adaptability"],
+      "hidden_ability": "Mold Breaker"
+    },
+    {
+      "name": "Sandile",
+      "type": ["Ground", "Dark"],
+      "ability": ["Intimidate", "Moxie"],
+      "hidden_ability": "Anger Point"
+    },
+    {
+      "name": "Darumaka",
+      "type": ["Fire"],
+      "ability": ["Hustle"],
+      "hidden_ability": "Inner Focus"
+    },
+    {
+      "name": "Galarian Darumaka",
+      "type": ["Ice"],
+      "ability": ["Hustle"],
+      "hidden_ability": "Inner Focus"
+    },
+    {
+      "name": "Maractus",
+      "type": ["Grass"],
+      "ability": ["Water Absorb", "Chlorophyll"],
+      "hidden_ability": "Storm Drain"
+    },
+    {
+      "name": "Dwebble",
+      "type": ["Bug", "Rock"],
+      "ability": ["Sturdy", "Shell Armor"],
+      "hidden_ability": "Weak Armor"
+    },
+    {
+      "name": "Scraggy",
+      "type": ["Dark", "Fighting"],
+      "ability": ["Shed Skin", "Moxie"],
+      "hidden_ability": "Intimidate"
+    },
+    {
+      "name": "Sigilyph",
+      "type": ["Psychic", "Flying"],
+      "ability": ["Wonder Skin", "Magic Guard"],
+      "hidden_ability": "Tinted Lens"
+    },
+    {
+      "name": "Yamask",
+      "type": ["Ghost"],
+      "ability": ["Mummy"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Galarian Yamask",
+      "type": ["Ground", "Ghost"],
+      "ability": ["Wandering Spirit"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Tirtouga",
+      "type": ["Water", "Rock"],
+      "ability": ["Solid Rock", "Sturdy"],
+      "hidden_ability": "Swift Swim"
+    },
+    {
+      "name": "Archen",
+      "type": ["Rock", "Flying"],
+      "ability": ["Defeatist"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Trubbish",
+      "type": ["Poison"],
+      "ability": ["Stench", "Sticky Hold"],
+      "hidden_ability": "Aftermath"
+    },
+    {
+      "name": "Zorua",
+      "type": ["Dark"],
+      "ability": ["Illusion"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Hisuian Zorua",
+      "type": ["Normal", "Ghost"],
+      "ability": ["Illusion"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Minccino",
+      "type": ["Normal"],
+      "ability": ["Cute Charm", "Technician"],
+      "hidden_ability": "Skill Link"
+    },
+    {
+      "name": "Gothita",
+      "type": ["Psychic"],
+      "ability": ["Frisk", "Competitive"],
+      "hidden_ability": "Shadow Tag"
+    },
+    {
+      "name": "Solosis",
+      "type": ["Psychic"],
+      "ability": ["Overcoat", "Magic Guard"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Ducklett",
+      "type": ["Water", "Flying"],
+      "ability": ["Keen Eye", "Big Pecks"],
+      "hidden_ability": "Hydration"
+    },
+    {
+      "name": "Vanillite",
+      "type": ["Ice"],
+      "ability": ["Ice Body", "Snow Cloak"],
+      "hidden_ability": "Weak Armor"
+    },
+    {
+      "name": "Deerling",
+      "type": ["Normal", "Grass"],
+      "ability": ["Chlorophyll", "Sap Sipper"],
+      "hidden_ability": "Serene Grace"
+    },
+    {
+      "name": "Emolga",
+      "type": ["Electric", "Flying"],
+      "ability": ["Static"],
+      "hidden_ability": "Motor Drive"
+    },
+    {
+      "name": "Foongus",
+      "type": ["Grass", "Poison"],
+      "ability": ["Effect Spore"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Frillish",
+      "type": ["Water", "Ghost"],
+      "ability": ["Water Absorb", "Cursed Body"],
+      "hidden_ability": "Damp"
+    },
+    {
+      "name": "Alomomola",
+      "type": ["Water"],
+      "ability": ["Healer", "Hydration"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Joltik",
+      "type": ["Bug", "Electric"],
+      "ability": ["Compound Eyes", "Unnerve"],
+      "hidden_ability": "Swarm"
+    },
+    {
+      "name": "Tynamo",
+      "type": ["Electric"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Elgyem",
+      "type": ["Psychic"],
+      "ability": ["Telepathy", "Synchronize"],
+      "hidden_ability": "Analytic"
+    },
+    {
+      "name": "Litwick",
+      "type": ["Ghost", "Fire"],
+      "ability": ["Flash Fire", "Flame Body"],
+      "hidden_ability": "Infiltrator"
+    },
+    {
+      "name": "Cubchoo",
+      "type": ["Ice"],
+      "ability": ["Snow Cloak", "Slush Rush"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Cryogonal",
+      "type": ["Ice"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Shelmet",
+      "type": ["Bug"],
+      "ability": ["Hydration", "Shell Armor"],
+      "hidden_ability": "Overcoat"
+    },
+    {
+      "name": "Stunfisk",
+      "type": ["Ground", "Electric"],
+      "ability": ["Static", "Limber"],
+      "hidden_ability": "Sand Veil"
+    },
+    {
+      "name": "Mienfoo",
+      "type": ["Fighting"],
+      "ability": ["Inner Focus", "Regenerator"],
+      "hidden_ability": "Reckless"
+    },
+    {
+      "name": "Golett",
+      "type": ["Ground", "Ghost"],
+      "ability": ["Iron Fist", "Klutz"],
+      "hidden_ability": "No Guard"
+    },
+    {
+      "name": "Bouffalant",
+      "type": ["Normal"],
+      "ability": ["Reckless", "Sap Sipper"],
+      "hidden_ability": "Soundproof"
+    },
+    {
+      "name": "Rufflet",
+      "type": ["Normal", "Flying"],
+      "ability": ["Keen Eye", "Sheer Force"],
+      "hidden_ability": "Hustle"
+    },
+    {
+      "name": "Vullaby",
+      "type": ["Dark", "Flying"],
+      "ability": ["Big Pecks", "Overcoat"],
+      "hidden_ability": "Weak Armor"
+    },
+    {
+      "name": "Heatmor",
+      "type": ["Fire"],
+      "ability": ["Gluttony", "Flash Fire"],
+      "hidden_ability": "White Smoke"
+    },
+    {
+      "name": "Larvesta",
+      "type": ["Bug", "Fire"],
+      "ability": ["Flame Body"],
+      "hidden_ability": "Swarm"
+    },
+    {
+      "name": "Bunnelby",
+      "type": ["Normal"],
+      "ability": ["Pickup", "Cheek Pouch"],
+      "hidden_ability": "Huge Power"
+    },
+    {
+      "name": "Fletchling",
+      "type": ["Normal", "Flying"],
+      "ability": ["Big Pecks"],
+      "hidden_ability": "Gale Wings"
+    },
+    {
+      "name": "Scatterbug",
+      "type": ["Bug"],
+      "ability": ["Shield Dust", "Compound Eyes"],
+      "hidden_ability": "Friend Guard"
+    },
+    {
+      "name": "Litleo",
+      "type": ["Fire", "Normal"],
+      "ability": ["Rivalry", "Unnerve"],
+      "hidden_ability": "Moxie"
+    },
+    {
+      "name": "Skiddo",
+      "type": ["Grass"],
+      "ability": ["Sap Sipper"],
+      "hidden_ability": "Grass Pelt"
+    },
+    {
+      "name": "Pancham",
+      "type": ["Fighting"],
+      "ability": ["Iron Fist", "Mold Breaker"],
+      "hidden_ability": "Scrappy"
+    },
+    {
+      "name": "Furfrou",
+      "type": ["Normal"],
+      "ability": ["Fur Coat"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Espurr",
+      "type": ["Psychic"],
+      "ability": ["Keen Eye", "Infiltrator"],
+      "hidden_ability": "Own Tempo"
+    },
+    {
+      "name": "Inkay",
+      "type": ["Dark", "Psychic"],
+      "ability": ["Contrary", "Suction Cups"],
+      "hidden_ability": "Infiltrator"
+    },
+    {
+      "name": "Binacle",
+      "type": ["Rock", "Water"],
+      "ability": ["Tough Claws", "Sniper"],
+      "hidden_ability": "Pickpocket"
+    },
+    {
+      "name": "Clauncher",
+      "type": ["Water"],
+      "ability": ["Mega Launcher"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Helioptile",
+      "type": ["Electric", "Normal"],
+      "ability": ["Dry Skin", "Sand Veil"],
+      "hidden_ability": "Solar Power"
+    },
+    {
+      "name": "Amaura",
+      "type": ["Rock", "Ice"],
+      "ability": ["Refrigerate"],
+      "hidden_ability": "Snow Warning"
+    },
+    {
+      "name": "Hawlucha",
+      "type": ["Fighting", "Flying"],
+      "ability": ["Limber", "Unburden"],
+      "hidden_ability": "Mold Breaker"
+    },
+    {
+      "name": "Phantump",
+      "type": ["Ghost", "Grass"],
+      "ability": ["Natural Cure", "Frisk"],
+      "hidden_ability": "Harvest"
+    },
+    {
+      "name": "Pumpkaboo",
+      "type": ["Ghost", "Grass"],
+      "ability": ["Pickup", "Frisk"],
+      "hidden_ability": "Insomnia"
+    },
+    {
+      "name": "Bergmite",
+      "type": ["Ice"],
+      "ability": ["Own Tempo", "Ice Body"],
+      "hidden_ability": "Sturdy"
+    },
+    {
+      "name": "Pikipek",
+      "type": ["Normal", "Flying"],
+      "ability": ["Keen Eye", "Skill Link"],
+      "hidden_ability": "Pickup"
+    },
+    {
+      "name": "Yungoos",
+      "type": ["Normal"],
+      "ability": ["Stakeout", "Strong Jaw"],
+      "hidden_ability": "Adaptability"
+    },
+    {
+      "name": "Grubbin",
+      "type": ["Bug"],
+      "ability": ["Swarm"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Crabrawler",
+      "type": ["Fighting"],
+      "ability": ["Hyper Cutter", "Iron Fist"],
+      "hidden_ability": "Anger Point"
+    },
+    {
+      "name": "Oricorio",
+      "type": ["Fire", "Flying"],
+      "ability": ["Dancer"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Rockruff",
+      "type": ["Rock"],
+      "ability": ["Keen Eye", "Vital Spirit"],
+      "hidden_ability": "Steadfast"
+    },
+    {
+      "name": "Wishiwashi",
+      "type": ["Water"],
+      "ability": ["Schooling"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Mareanie",
+      "type": ["Poison", "Water"],
+      "ability": ["Merciless", "Limber"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Mudbray",
+      "type": ["Ground"],
+      "ability": ["Own Tempo", "Stamina"],
+      "hidden_ability": "Inner Focus"
+    },
+    {
+      "name": "Dewpider",
+      "type": ["Water", "Bug"],
+      "ability": ["Water Bubble"],
+      "hidden_ability": "Water Absorb"
+    },
+    {
+      "name": "Fomantis",
+      "type": ["Grass"],
+      "ability": ["Leaf Guard"],
+      "hidden_ability": "Contrary"
+    },
+    {
+      "name": "Salandit",
+      "type": ["Poison", "Fire"],
+      "ability": ["Corrosion"],
+      "hidden_ability": "Oblivious"
+    },
+    {
+      "name": "Stufful",
+      "type": ["Normal", "Fighting"],
+      "ability": ["Fluffy", "Klutz"],
+      "hidden_ability": "Cute Charm"
+    },
+    {
+      "name": "Bounsweet",
+      "type": ["Grass"],
+      "ability": ["Leaf Guard", "Oblivious"],
+      "hidden_ability": "Sweet Veil"
+    },
+    {
+      "name": "Oranguru",
+      "type": ["Normal", "Psychic"],
+      "ability": ["Inner Focus", "Telepathy"],
+      "hidden_ability": "Symbiosis"
+    },
+    {
+      "name": "Passimian",
+      "type": ["Fighting"],
+      "ability": ["Receiver"],
+      "hidden_ability": "Defiant"
+    },
+    {
+      "name": "Wimpod",
+      "type": ["Bug", "Water"],
+      "ability": ["Wimp Out"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Sandygast",
+      "type": ["Ghost", "Ground"],
+      "ability": ["Water Compaction"],
+      "hidden_ability": "Sand Veil"
+    },
+    {
+      "name": "Pyukumuku",
+      "type": ["Water"],
+      "ability": ["Innards Out"],
+      "hidden_ability": "Unaware"
+    },
+    {
+      "name": "Minior",
+      "type": ["Rock", "Flying"],
+      "ability": ["Shields Down"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Komala",
+      "type": ["Normal"],
+      "ability": ["Comatose"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Bruxish",
+      "type": ["Water", "Psychic"],
+      "ability": ["Dazzling", "Strong Jaw"],
+      "hidden_ability": "Wonder Skin"
+    },
+    {
+      "name": "Dhelmise",
+      "type": ["Ghost", "Grass"],
+      "ability": ["Steelworker"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Skwovet",
+      "type": ["Normal"],
+      "ability": ["Cheek Pouch"],
+      "hidden_ability": "Gluttony"
+    },
+    {
+      "name": "Blipbug",
+      "type": ["Bug"],
+      "ability": ["Swarm", "Compound Eyes"],
+      "hidden_ability": "Telepathy"
+    },
+    {
+      "name": "Nickit",
+      "type": ["Dark"],
+      "ability": ["Run Away", "Unburden"],
+      "hidden_ability": "Stakeout"
+    },
+    {
+      "name": "Gossifleur",
+      "type": ["Grass"],
+      "ability": ["Cotton Down", "Regenerator"],
+      "hidden_ability": "Effect Spore"
+    },
+    {
+      "name": "Wooloo",
+      "type": ["Normal"],
+      "ability": ["Fluffy", "Run Away"],
+      "hidden_ability": "Bulletproof"
+    },
+    {
+      "name": "Chewtle",
+      "type": ["Water"],
+      "ability": ["Strong Jaw", "Shell Armor"],
+      "hidden_ability": "Swift Swim"
+    },
+    {
+      "name": "Yamper",
+      "type": ["Electric"],
+      "ability": ["Ball Fetch"],
+      "hidden_ability": "Rattled"
+    },
+    {
+      "name": "Rolycoly",
+      "type": ["Rock"],
+      "ability": ["Steam Engine", "Heatproof"],
+      "hidden_ability": "Flash Fire"
+    },
+    {
+      "name": "Silicobra",
+      "type": ["Ground"],
+      "ability": ["Sand Spit", "Shed Skin"],
+      "hidden_ability": "Sand Veil"
+    },
+    {
+      "name": "Cramorant",
+      "type": ["Flying", "Water"],
+      "ability": ["Gulp Missile"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Arrokuda",
+      "type": ["Water"],
+      "ability": ["Swift Swim"],
+      "hidden_ability": "Propeller Tail"
+    },
+    {
+      "name": "Toxel",
+      "type": ["Electric", "Poison"],
+      "ability": ["Rattled", "Static"],
+      "hidden_ability": "Klutz"
+    },
+    {
+      "name": "Sizzlipede",
+      "type": ["Fire", "Bug"],
+      "ability": ["Flash Fire", "White Smoke"],
+      "hidden_ability": "Flame Body"
+    },
+    {
+      "name": "Clobbopus",
+      "type": ["Fighting"],
+      "ability": ["Limber"],
+      "hidden_ability": "Technician"
+    },
+    {
+      "name": "Sinistea",
+      "type": ["Ghost"],
+      "ability": ["Weak Armor"],
+      "hidden_ability": "Cursed Body"
+    },
+    {
+      "name": "Falinks",
+      "type": ["Fighting"],
+      "ability": ["Battle Armor"],
+      "hidden_ability": "Defiant"
+    },
+    {
+      "name": "Pincurchin",
+      "type": ["Electric"],
+      "ability": ["Lightning Rod"],
+      "hidden_ability": "Electric Surge"
+    },
+    {
+      "name": "Snom",
+      "type": ["Ice", "Bug"],
+      "ability": ["Shield Dust"],
+      "hidden_ability": "Ice Scales"
+    },
+    {
+      "name": "Stonjourner",
+      "type": ["Rock"],
+      "ability": ["Power Spot"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Eiscue",
+      "type": ["Ice"],
+      "ability": ["Ice Face"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Indeedee",
+      "type": ["Psychic", "Normal"],
+      "ability": ["Inner Focus", "Synchronize"],
+      "hidden_ability": "Psychic Surge"
+    },
+    {
+      "name": "Morpeko",
+      "type": ["Electric", "Dark"],
+      "ability": ["Hunger Switch"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Arctozolt",
+      "type": ["Electric", "Ice"],
+      "ability": ["Volt Absorb", "Static"],
+      "hidden_ability": "Slush Rush"
+    },
+    {
+      "name": "Arctovish",
+      "type": ["Water", "Ice"],
+      "ability": ["Water Absorb", "Ice Body"],
+      "hidden_ability": "Slush Rush"
+    },
+    {
+      "name": "Lechonk",
+      "type": ["Normal"],
+      "ability": ["Aroma Veil", "Gluttony"],
+      "hidden_ability": "Thick Fat"
+    },
+    {
+      "name": "Tarountula",
+      "type": ["Bug"],
+      "ability": ["Insomnia"],
+      "hidden_ability": "Stakeout"
+    },
+    {
+      "name": "Nymble",
+      "type": ["Bug"],
+      "ability": ["Swarm"],
+      "hidden_ability": "Tinted Lens"
+    },
+    {
+      "name": "Pawmi",
+      "type": ["Electric"],
+      "ability": ["Static", "Natural Cure"],
+      "hidden_ability": "Iron Fist"
+    },
+    {
+      "name": "Tandemaus",
+      "type": ["Normal"],
+      "ability": ["Run Away", "Pickup"],
+      "hidden_ability": "Own Tempo"
+    },
+    {
+      "name": "Smoliv",
+      "type": ["Grass", "Normal"],
+      "ability": ["Early Bird"],
+      "hidden_ability": "Harvest"
+    },
+    {
+      "name": "Squawkabilly",
+      "type": ["Normal", "Flying"],
+      "ability": ["Intimidate", "Hustle"],
+      "hidden_ability": "Guts"
+    },
+    {
+      "name": "Tadbulb",
+      "type": ["Electric"],
+      "ability": ["Own Tempo", "Static"],
+      "hidden_ability": "Damp"
+    },
+    {
+      "name": "Wattrel",
+      "type": ["Electric", "Flying"],
+      "ability": ["Wind Power", "Volt Absorb"],
+      "hidden_ability": "Competitive"
+    },
+    {
+      "name": "Maschiff",
+      "type": ["Dark"],
+      "ability": ["Intimidate", "Run Away"],
+      "hidden_ability": "Stakeout"
+    },
+    {
+      "name": "Shroodle",
+      "type": ["Poison", "Normal"],
+      "ability": ["Unburden", "Pickpocket"],
+      "hidden_ability": "Prankster"
+    },
+    {
+      "name": "Bramblin",
+      "type": ["Grass", "Ghost"],
+      "ability": ["Wind Rider"],
+      "hidden_ability": "Infiltrator"
+    },
+    {
+      "name": "Toedscool",
+      "type": ["Ground", "Grass"],
+      "ability": ["Mycelium Might"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Capsakid",
+      "type": ["Grass"],
+      "ability": ["Chlorophyll", "Insomnia"],
+      "hidden_ability": "Klutz"
+    },
+    {
+      "name": "Klawf",
+      "type": ["Rock"],
+      "ability": ["Anger Shell", "Shell Armor"],
+      "hidden_ability": "Regenerator"
+    },
+    {
+      "name": "Nacli",
+      "type": ["Rock"],
+      "ability": ["Purifying Salt", "Sturdy"],
+      "hidden_ability": "Clear Body"
+    },
+    {
+      "name": "Charcadet",
+      "type": ["Fire"],
+      "ability": ["Flash Fire"],
+      "hidden_ability": "Flame Body"
+    },
+    {
+      "name": "Rellor",
+      "type": ["Bug"],
+      "ability": ["Compound Eyes"],
+      "hidden_ability": "Shed Skin"
+    },
+    {
+      "name": "Flittle",
+      "type": ["Psychic"],
+      "ability": ["Anticipation", "Frisk"],
+      "hidden_ability": "Speed Boost"
+    },
+    {
+      "name": "Wiglett",
+      "type": ["Water"],
+      "ability": ["Gooey", "Rattled"],
+      "hidden_ability": "Sand Veil"
+    },
+    {
+      "name": "Bombirdier",
+      "type": ["Flying", "Dark"],
+      "ability": ["Big Pecks", "Keen Eye"],
+      "hidden_ability": "Rocky Payload"
+    },
+    {
+      "name": "Finizen",
+      "type": ["Water"],
+      "ability": ["Water Veil"],
+      "hidden_ability": null
+    },
+    {
+      "name": "Glimmet",
+      "type": ["Rock", "Poison"],
+      "ability": ["Toxic Debris"],
+      "hidden_ability": "Corrosion"
+    },
+    {
+      "name": "Greavard",
+      "type": ["Ghost"],
+      "ability": ["Pickup"],
+      "hidden_ability": "Fluffy"
+    },
+    {
+      "name": "Flamigo",
+      "type": ["Flying", "Fighting"],
+      "ability": ["Scrappy", "Tangled Feet"],
+      "hidden_ability": "Costar"
+    },
+    {
+      "name": "Cetoddle",
+      "type": ["Ice"],
+      "ability": ["Thick Fat", "Snow Cloak"],
+      "hidden_ability": "Sheer Force"
+    },
+    {
+      "name": "Veluza",
+      "type": ["Water", "Psychic"],
+      "ability": ["Mold Breaker"],
+      "hidden_ability": "Sharpness"
+    },
+    {
+      "name": "Dondozo",
+      "type": ["Water"],
+      "ability": ["Unaware", "Oblivious"],
+      "hidden_ability": "Water Veil"
+    },
+    {
+      "name": "Poltchageist",
+      "type": ["Grass", "Ghost"],
+      "ability": ["Hospitality"],
+      "hidden_ability": "Heatproof"
+    }
+  ]
+}
