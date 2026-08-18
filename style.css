@@ -38,7 +38,7 @@ body {
 	overflow: hidden;
 }
 
-#text {
+#quiz-text {
     font-family: 'PMDFont', monospace;
     font-size: 32px;
     line-height: 1.4;
@@ -97,4 +97,17 @@ button:hover {
     background: #7b1fa2;
     border-color: #f8f8f8;
     transform: scale(1.02);
+}
+
+#debug-control,
+#reset-control {
+    width: auto;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    display: inline-block;
+}
+
+#debug-control:hover,
+#reset-control:hover {
+    transform: none;
 }
