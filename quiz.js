@@ -6,6 +6,11 @@ let currentPokemon = null;
 let mainType = "";
 let secondTypes = [];
 
+// These get locked in the moment the quiz ends, and never change
+// again for the rest of the session (see generateResultSet below).
+let primaryPokemon = null;
+let alternatePokemons = [];
+
 // Change this if you want different music.
 
 const bgm = new Audio('bgm.mp3');
@@ -202,7 +207,7 @@ function selectOption(opt) {
     }
 }
 
-//Scoring
+// Scoring
 
 function calculateFinalResult() {
     const sortedTypes = Object.keys(typeScores).sort((a, b) => typeScores[b] - typeScores[a]);
@@ -211,7 +216,7 @@ function calculateFinalResult() {
     const secondScore = typeScores[sortedTypes[1]];
     secondTypes = sortedTypes.filter((t, i) => i > 0 && typeScores[t] === secondScore);
 
-    startPokemonReveal();
+    generateResultSet();
 }
 
 function getRandomAbility(pokemon) {
@@ -232,18 +237,53 @@ function pickRandomUnique(pool, count) {
     return shuffled.slice(0, count);
 }
 
-function startPokemonReveal() {
-    const pool = getPokemonByType(mainType);
+function generateResultSet() {
+    const mainPool = getPokemonByType(mainType);
 
-    if (pool.length === 0) {
+    if (mainPool.length === 0) {
         console.error("No Pokémon found for type " + mainType);
         return;
     }
 
-    const chosen = pool[Math.floor(Math.random() * pool.length)];
-    const ability = getRandomAbility(chosen);
+    const primaryChosen = mainPool[Math.floor(Math.random() * mainPool.length)];
+    primaryPokemon = {
+        name: primaryChosen.name,
+        type: primaryChosen.type,
+        ability: getRandomAbility(primaryChosen)
+    };
 
-    currentPokemon = { name: chosen.name, type: chosen.type, ability: ability };
+    const usedNames = [primaryPokemon.name];
+
+    const mainAltPool = getPokemonByType(mainType, usedNames);
+    const mainAltPicks = pickRandomUnique(mainAltPool, 4);
+    usedNames.push(...mainAltPicks.map(p => p.name));
+
+    let secondAltPicks = [];
+    if (secondTypes.length > 0) {
+        const slots = 2;
+        const perType = Math.floor(slots / secondTypes.length);
+        const remainder = slots % secondTypes.length;
+        const orderedTypes = [...secondTypes].sort(() => 0.5 - Math.random());
+
+        orderedTypes.forEach((t, idx) => {
+            const count = perType + (idx < remainder ? 1 : 0);
+            if (count > 0) {
+                const pool = getPokemonByType(t, usedNames);
+                const picks = pickRandomUnique(pool, count);
+                secondAltPicks.push(...picks);
+                usedNames.push(...picks.map(p => p.name));
+            }
+        });
+    }
+
+    alternatePokemons = [...mainAltPicks, ...secondAltPicks].map(p => ({
+        name: p.name,
+        type: p.type,
+        ability: getRandomAbility(p)
+    }));
+
+    currentPokemon = primaryPokemon;
+    saveQuizState(false);
     displayFinalReveal(currentPokemon);
 }
 
@@ -256,7 +296,10 @@ function displayFinalReveal(pokemon) {
     typeWriter(message, () => {
         const yesBtn = document.createElement("button");
         yesBtn.innerText = "I'm happy with this!";
-        yesBtn.onclick = () => showResultsPage(pokemon);
+        yesBtn.onclick = () => {
+            saveQuizState(true);
+            showResultsPage(currentPokemon);
+        };
         optionsContainer.appendChild(yesBtn);
 
         const noBtn = document.createElement("button");
@@ -272,58 +315,32 @@ function showAlternatives() {
     const optionsContainer = document.getElementById("options-container");
     const original = currentPokemon;
 
-    const usedNames = [original.name];
-
-    const mainPool = getPokemonByType(mainType, usedNames);
-    const mainPicks = pickRandomUnique(mainPool, 4);
-    usedNames.push(...mainPicks.map(p => p.name));
-
-    let secondPicks = [];
-    if (secondTypes.length > 0) {
-        const slots = 2;
-        const perType = Math.floor(slots / secondTypes.length);
-        const remainder = slots % secondTypes.length;
-        const orderedTypes = [...secondTypes].sort(() => 0.5 - Math.random());
-
-        orderedTypes.forEach((t, idx) => {
-            const count = perType + (idx < remainder ? 1 : 0);
-            if (count > 0) {
-                const pool = getPokemonByType(t, usedNames);
-                const picks = pickRandomUnique(pool, count);
-                secondPicks.push(...picks);
-                usedNames.push(...picks.map(p => p.name));
-            }
-        });
-    }
-
-    const alternatives = [...mainPicks, ...secondPicks];
-
     optionsContainer.innerHTML = "";
     typeWriter("Here are a few other Pokémon that might fit you better:", () => {
-        alternatives.forEach(alt => {
-            const btn = document.createElement("button");
-            btn.innerText = alt.name;
-            btn.onclick = () => {
-                const ability = getRandomAbility(alt);
-                currentPokemon = { name: alt.name, type: alt.type, ability: ability };
-                displayFinalReveal(currentPokemon);
-            };
-            optionsContainer.appendChild(btn);
-        });
+        alternatePokemons
+            .filter(alt => alt.name !== original.name)
+            .forEach(alt => {
+                const btn = document.createElement("button");
+                btn.innerText = alt.name;
+                btn.onclick = () => {
+                    currentPokemon = alt;
+                    saveQuizState(false);
+                    displayFinalReveal(currentPokemon);
+                };
+                optionsContainer.appendChild(btn);
+            });
 
         const backBtn = document.createElement("button");
         backBtn.innerText = `Actually, ${original.name} was right.`;
         backBtn.className = "back-button";
         backBtn.onclick = () => {
             currentPokemon = original;
+            saveQuizState(false);
             displayFinalReveal(currentPokemon);
         };
         optionsContainer.appendChild(backBtn);
     });
 }
-
-// Copies the results to the clipboard, with a backup method
-// in case the browser blocks or doesn't support the normal way.
 
 function copyToClipboard(text, button) {
     const onSuccess = () => {
@@ -388,16 +405,59 @@ function showResultsPage(pokemon) {
     copyBtn.innerText = "Copy Results";
     copyBtn.onclick = () => copyToClipboard(summary, copyBtn);
     optionsContainer.appendChild(copyBtn);
+}
 
-    const retakeBtn = document.createElement("button");
-    retakeBtn.innerText = "Retake the Quiz";
-    retakeBtn.onclick = () => {
-        localStorage.removeItem("quiz_result");
-        location.reload();
+// Results lock in when someone finishes the quiz, not when they pick a Pokemon.
+
+function saveQuizState(accepted) {
+    const state = {
+        mainType: mainType,
+        secondTypes: secondTypes,
+        primary: primaryPokemon,
+        alternates: alternatePokemons,
+        current: currentPokemon,
+        accepted: accepted
     };
-    optionsContainer.appendChild(retakeBtn);
+    localStorage.setItem("quiz_state", JSON.stringify(state));
+}
 
-    localStorage.setItem("quiz_result", JSON.stringify(pokemon));
+function loadQuizState() {
+    const raw = localStorage.getItem("quiz_state");
+    if (!raw) return null;
+    try {
+        return JSON.parse(raw);
+    } catch (err) {
+        console.error("Couldn't read saved quiz state:", err);
+        return null;
+    }
+}
+
+// Clears everything and starts over.
+
+function clearAndReload() {
+    localStorage.removeItem("quiz_state");
+    location.reload();
+}
+
+// Reset button. Delete if you don't want rerolling.
+
+function addResetControl() {
+    const resetLink = document.createElement("button");
+    resetLink.innerText = "Reset Results";
+    resetLink.id = "reset-control";
+    resetLink.style.position = "fixed";
+    resetLink.style.bottom = "10px";
+    resetLink.style.right = "10px";
+    resetLink.style.opacity = "0.6";
+    resetLink.style.fontSize = "0.75em";
+    resetLink.style.padding = "4px 8px";
+    resetLink.style.zIndex = "1000";
+    resetLink.onclick = () => {
+        if (confirm("Clear your saved result and start the quiz over?")) {
+            clearAndReload();
+        }
+    };
+    document.body.appendChild(resetLink);
 }
 
 // This is stuff on load in.
@@ -408,9 +468,22 @@ window.onload = () => {
         if (bgm.paused) bgm.play();
     }, { once: true });
 
-    const savedData = localStorage.getItem("quiz_result");
-    if (savedData) {
-        showResultsPage(JSON.parse(savedData));
+    addResetControl();
+
+    const saved = loadQuizState();
+
+    if (saved) {
+        mainType = saved.mainType;
+        secondTypes = saved.secondTypes;
+        primaryPokemon = saved.primary;
+        alternatePokemons = saved.alternates;
+        currentPokemon = saved.current;
+
+        if (saved.accepted) {
+            showResultsPage(currentPokemon);
+        } else {
+            displayFinalReveal(currentPokemon);
+        }
     } else {
         renderQuestion();
     }
