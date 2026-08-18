@@ -322,6 +322,46 @@ function showAlternatives() {
     });
 }
 
+// Copies the results to the clipboard, with a backup method
+// in case the browser blocks or doesn't support the normal way.
+
+function copyToClipboard(text, button) {
+    const onSuccess = () => {
+        button.innerText = "Saved to Clipboard!";
+    };
+    const onFailure = () => {
+        fallbackCopy(text, button);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onSuccess).catch(onFailure);
+    } else {
+        fallbackCopy(text, button);
+    }
+}
+
+function fallbackCopy(text, button) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+
+    let succeeded = false;
+    try {
+        succeeded = document.execCommand("copy");
+    } catch (err) {
+        succeeded = false;
+    }
+    document.body.removeChild(textarea);
+
+    button.innerText = succeeded
+        ? "Saved to Clipboard!"
+        : "Copy failed — select & copy manually";
+}
+
 // Results.
 
 function showResultsPage(pokemon) {
@@ -346,10 +386,7 @@ function showResultsPage(pokemon) {
 
     const copyBtn = document.createElement("button");
     copyBtn.innerText = "Copy Results";
-    copyBtn.onclick = () => {
-        navigator.clipboard.writeText(summary);
-        copyBtn.innerText = "Saved to Clipboard!";
-    };
+    copyBtn.onclick = () => copyToClipboard(summary, copyBtn);
     optionsContainer.appendChild(copyBtn);
 
     const retakeBtn = document.createElement("button");
