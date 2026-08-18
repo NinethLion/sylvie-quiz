@@ -1,21 +1,17 @@
-// =========================================================
-// Quiz of Enlightenment — simplified version
-// - 10 fixed questions, scored by Pokémon TYPE (not nature)
-// - No guide character, no shinies, no anomalies
-// - Rolls one Pokémon matching your top type + a random ability
-//   (hidden abilities included in the roll)
-// - "Decline" option shows 6 alternatives: 4 of the top type,
-//   2 of the runner-up type (split evenly if there's a tie)
-// =========================================================
+// Setting up the beginning of the quiz.
 
 let pokemonData = [];
 let currentStep = 0;
 let currentPokemon = null;
 let mainType = "";
-let secondTypes = []; // all types tied for 2nd place
+let secondTypes = [];
+
+// Change this if you want different music.
 
 const bgm = new Audio('bgm.mp3');
 bgm.loop = true;
+
+// Linking this document to the Pokemon list.
 
 fetch('masterlist.json')
     .then(response => response.json())
@@ -25,9 +21,8 @@ fetch('masterlist.json')
     })
     .catch(err => console.error("Fetch error:", err));
 
-// ---------------------------------------------------------
-// Fixed question set (not randomized, not shuffled)
-// ---------------------------------------------------------
+// Questions go here.
+
 const typeQuestions = [
     {
         question: "What is your primary driving force?",
@@ -126,17 +121,14 @@ const typeQuestions = [
     }
 ];
 
-// Only the types that actually appear in the question set above
-// can ever be scored, so those are the only ones tracked.
 let typeScores = {
     Fighting: 0, Fire: 0, Electric: 0, Psychic: 0, Ice: 0, Normal: 0,
     Grass: 0, Water: 0, Bug: 0, Flying: 0, Ghost: 0, Dark: 0,
     Poison: 0, Rock: 0, Ground: 0
 };
 
-// ---------------------------------------------------------
-// Question flow
-// ---------------------------------------------------------
+// This code lets the questions work properly.
+
 function renderQuestion() {
     const textElement = document.getElementById("quiz-text");
     const optionsContainer = document.getElementById("options-container");
@@ -210,9 +202,8 @@ function selectOption(opt) {
     }
 }
 
-// ---------------------------------------------------------
-// Scoring & Pokémon roll
-// ---------------------------------------------------------
+//Scoring
+
 function calculateFinalResult() {
     const sortedTypes = Object.keys(typeScores).sort((a, b) => typeScores[b] - typeScores[a]);
 
@@ -275,8 +266,8 @@ function displayFinalReveal(pokemon) {
     });
 }
 
-// 6 alternatives: 4 from the main type, 2 from the runner-up
-// type(s) — split as evenly as possible if 2nd place is tied.
+// Six alternatives: Four from the main type, two from second place.
+
 function showAlternatives() {
     const optionsContainer = document.getElementById("options-container");
     const original = currentPokemon;
@@ -331,6 +322,13 @@ function showAlternatives() {
     });
 }
 
+// Results.
+
+function showResultsPage(pokemon) {
+    const textElement = document.getElementById("quiz-text");
+    const optionsContainer = document.getElementById("options-container");
+    optionsContainer.innerHTML = "";
+
     const summary = `
         [Quiz Result]
         Pokémon: ${pokemon.name}
@@ -365,9 +363,8 @@ function showAlternatives() {
     localStorage.setItem("quiz_result", JSON.stringify(pokemon));
 }
 
-// ---------------------------------------------------------
-// Init
-// ---------------------------------------------------------
+// This is stuff on load in.
+
 window.onload = () => {
     bgm.play().catch(() => console.log("Autoplay blocked. Music will start on next click."));
     document.body.addEventListener('click', () => {
