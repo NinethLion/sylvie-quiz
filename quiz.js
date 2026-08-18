@@ -6,8 +6,7 @@ let currentPokemon = null;
 let mainType = "";
 let secondTypes = [];
 
-// These get locked in the moment the quiz ends, and never change
-// again for the rest of the session (see generateResultSet below).
+// These get locked in the moment the quiz ends and never change.
 let primaryPokemon = null;
 let alternatePokemons = [];
 
@@ -522,6 +521,7 @@ window.onload = () => {
     }, { once: true });
 
     addResetControl();
+    addDebugControl();
 
     const saved = loadQuizState();
 
