@@ -460,6 +460,59 @@ function addResetControl() {
     document.body.appendChild(resetLink);
 }
 
+// Debug
+
+function addDebugControl() {
+    const debugBtn = document.createElement("button");
+    debugBtn.innerText = "Debug";
+    debugBtn.id = "debug-control";
+    debugBtn.style.position = "fixed";
+    debugBtn.style.bottom = "10px";
+    debugBtn.style.left = "10px";
+    debugBtn.style.opacity = "0.6";
+    debugBtn.style.fontSize = "0.75em";
+    debugBtn.style.padding = "4px 8px";
+    debugBtn.style.zIndex = "1000";
+ 
+    const debugPanel = document.createElement("pre");
+    debugPanel.id = "debug-panel";
+    debugPanel.style.position = "fixed";
+    debugPanel.style.bottom = "40px";
+    debugPanel.style.left = "10px";
+    debugPanel.style.background = "rgba(0, 0, 0, 0.85)";
+    debugPanel.style.color = "#0f0";
+    debugPanel.style.padding = "8px 12px";
+    debugPanel.style.fontSize = "0.75em";
+    debugPanel.style.borderRadius = "4px";
+    debugPanel.style.zIndex = "1000";
+    debugPanel.style.display = "none";
+    debugPanel.style.whiteSpace = "pre";
+ 
+    debugBtn.onclick = () => {
+        debugPanel.style.display = debugPanel.style.display === "none" ? "block" : "none";
+        updateDebugPanel();
+    };
+ 
+    document.body.appendChild(debugPanel);
+    document.body.appendChild(debugBtn);
+}
+ 
+function updateDebugPanel() {
+    const debugPanel = document.getElementById("debug-panel");
+    if (!debugPanel || debugPanel.style.display === "none") return;
+ 
+    const sorted = Object.keys(typeScores).sort((a, b) => typeScores[b] - typeScores[a]);
+    const lines = sorted.map(t => `${t}: ${typeScores[t]}`);
+ 
+    let output = "Type Scores\n" + lines.join("\n");
+    if (mainType) {
+        output += `\n\nMain type: ${mainType}`;
+        output += `\nSecond type(s): ${secondTypes.join(", ") || "(none)"}`;
+    }
+ 
+    debugPanel.innerText = output;
+}
+
 // This is stuff on load in.
 
 window.onload = () => {
