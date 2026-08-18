@@ -1,5 +1,4 @@
 body {
-    /* 1. Insert your GIF here. Make sure the file name matches exactly! */
     background-image: url("Background.gif"); 
     background-size: cover;
     background-position: center;
@@ -39,7 +38,7 @@ body {
 	overflow: hidden;
 }
 
-#callisto-text {
+#text {
     font-family: 'PMDFont', monospace;
     font-size: 32px;
     line-height: 1.4;
