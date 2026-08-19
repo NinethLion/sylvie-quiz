@@ -6,7 +6,8 @@ let currentPokemon = null;
 let mainType = "";
 let secondTypes = [];
 
-// These get locked in the moment the quiz ends and never change.
+// These get locked in the moment the quiz ends.
+
 let primaryPokemon = null;
 let alternatePokemons = [];
 
@@ -312,12 +313,11 @@ function displayFinalReveal(pokemon) {
 
 function showAlternatives() {
     const optionsContainer = document.getElementById("options-container");
-    const original = currentPokemon;
 
     optionsContainer.innerHTML = "";
     typeWriter("Here are a few other Pokémon that might fit you better:", () => {
         alternatePokemons
-            .filter(alt => alt.name !== original.name)
+            .filter(alt => alt.name !== currentPokemon.name)
             .forEach(alt => {
                 const btn = document.createElement("button");
                 btn.innerText = alt.name;
@@ -329,15 +329,17 @@ function showAlternatives() {
                 optionsContainer.appendChild(btn);
             });
 
-        const backBtn = document.createElement("button");
-        backBtn.innerText = `Actually, ${original.name} was right.`;
-        backBtn.className = "back-button";
-        backBtn.onclick = () => {
-            currentPokemon = original;
-            saveQuizState(false);
-            displayFinalReveal(currentPokemon);
-        };
-        optionsContainer.appendChild(backBtn);
+        if (currentPokemon.name !== primaryPokemon.name) {
+            const backBtn = document.createElement("button");
+            backBtn.innerText = `Go back to my original pick: ${primaryPokemon.name}`;
+            backBtn.className = "back-button";
+            backBtn.onclick = () => {
+                currentPokemon = primaryPokemon;
+                saveQuizState(false);
+                displayFinalReveal(currentPokemon);
+            };
+            optionsContainer.appendChild(backBtn);
+        }
     });
 }
 
@@ -385,11 +387,20 @@ function showResultsPage(pokemon) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
 
-    const summary = `
+    const isOriginal = primaryPokemon && pokemon.name === primaryPokemon.name;
+
+    const summary = isOriginal
+        ? `
         [Quiz Result]
         Pokémon: ${pokemon.name}
         Type: ${pokemon.type.join(" / ")}
         Ability: ${pokemon.ability}
+        (This was your original pick.)
+    `
+        : `
+        [Quiz Result]
+        Original Pick: ${primaryPokemon.name} (${primaryPokemon.type.join(" / ")}) — Ability: ${primaryPokemon.ability}
+        Final Pick: ${pokemon.name} (${pokemon.type.join(" / ")}) — Ability: ${pokemon.ability}
     `;
 
     textElement.innerText = "Your result has been recorded!";
@@ -404,6 +415,11 @@ function showResultsPage(pokemon) {
     copyBtn.innerText = "Copy Results";
     copyBtn.onclick = () => copyToClipboard(summary, copyBtn);
     optionsContainer.appendChild(copyBtn);
+
+    const retakeBtn = document.createElement("button");
+    retakeBtn.innerText = "Retake the Quiz";
+    retakeBtn.onclick = () => clearAndReload();
+    optionsContainer.appendChild(retakeBtn);
 }
 
 // Results lock in when someone finishes the quiz, not when they pick a Pokemon.
@@ -412,6 +428,7 @@ function saveQuizState(accepted) {
     const state = {
         mainType: mainType,
         secondTypes: secondTypes,
+        typeScores: typeScores,
         primary: primaryPokemon,
         alternates: alternatePokemons,
         current: currentPokemon,
@@ -431,10 +448,9 @@ function loadQuizState() {
     }
 }
 
-// Clears everything and starts over.
-
 function clearAndReload() {
     localStorage.removeItem("quiz_state");
+    localStorage.removeItem("debug_panel_open");
     location.reload();
 }
 
@@ -488,12 +504,20 @@ function addDebugControl() {
     debugPanel.style.whiteSpace = "pre";
  
     debugBtn.onclick = () => {
-        debugPanel.style.display = debugPanel.style.display === "none" ? "block" : "none";
+        const isOpen = debugPanel.style.display !== "none";
+        debugPanel.style.display = isOpen ? "none" : "block";
+        localStorage.setItem("debug_panel_open", debugPanel.style.display === "block" ? "true" : "false");
         updateDebugPanel();
     };
- 
+
     document.body.appendChild(debugPanel);
     document.body.appendChild(debugBtn);
+
+    // Restore whether the panel was open before the last refresh.
+    if (localStorage.getItem("debug_panel_open") === "true") {
+        debugPanel.style.display = "block";
+        updateDebugPanel();
+    }
 }
  
 function updateDebugPanel() {
@@ -528,9 +552,12 @@ window.onload = () => {
     if (saved) {
         mainType = saved.mainType;
         secondTypes = saved.secondTypes;
+        if (saved.typeScores) typeScores = saved.typeScores;
         primaryPokemon = saved.primary;
         alternatePokemons = saved.alternates;
         currentPokemon = saved.current;
+
+        updateDebugPanel();
 
         if (saved.accepted) {
             showResultsPage(currentPokemon);
