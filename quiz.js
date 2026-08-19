@@ -415,11 +415,6 @@ function showResultsPage(pokemon) {
     copyBtn.innerText = "Copy Results";
     copyBtn.onclick = () => copyToClipboard(summary, copyBtn);
     optionsContainer.appendChild(copyBtn);
-
-    const retakeBtn = document.createElement("button");
-    retakeBtn.innerText = "Retake the Quiz";
-    retakeBtn.onclick = () => clearAndReload();
-    optionsContainer.appendChild(retakeBtn);
 }
 
 // Results lock in when someone finishes the quiz, not when they pick a Pokemon.
