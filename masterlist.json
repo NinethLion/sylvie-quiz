@@ -250,6 +250,18 @@
       "hidden_ability": null
     },
     {
+      "name": "Drowzee",
+      "type": ["Psychic"],
+      "ability":["Insomnia", "Forewarn"],
+      "hidden_ability": "Inner Focus"
+    },
+    {
+      "name:": "Krabby",
+      "type": ["Water"],
+      "ability":["Hyper Cutter", "Shell Armor"],
+      "hidden_ability": "Sheer Force"
+    },
+    {
       "name": "Voltorb",
       "type": ["Electric"],
       "ability": ["Soundproof", "Static"],
@@ -478,6 +490,12 @@
       "hidden_ability": "Plus"
     },
     {
+      "name": "Bonsly",
+      "type": ["Rock"],
+      "ability": ["Sturdy", "Rock Head"],
+      "hidden_ability": "Rattled"
+    },
+    {
       "name": "Hoppip",
       "type": ["Grass", "Flying"],
       "ability": ["Chlorophyll", "Leaf Guard"],
@@ -530,6 +548,12 @@
       "type": ["Psychic"],
       "ability": ["Levitate"],
       "hidden_ability": null
+    },
+    {
+      "name": "Wynaut",
+      "type": ["Psychic"],
+      "ability": ["Shadow Tag"],
+      "hidden_ability": "Telepathy"
     },
     {
       "name": "Girafarig",
@@ -628,6 +652,12 @@
       "hidden_ability": "Insomnia"
     },
     {
+      "name": "Mantyke",
+      "type": ["Water", "Flying"],
+      "ability": ["Swift Swim", "Water Absorb"],
+      "hidden_ability": "Water Veil"
+    },
+    {
       "name": "Houndour",
       "type": ["Dark", "Fire"],
       "ability": ["Early Bird", "Flash Fire"],
@@ -656,24 +686,6 @@
       "type": ["Normal"],
       "ability": ["Thick Fat", "Scrappy"],
       "hidden_ability": "Sap Sipper"
-    },
-    {
-      "name": "Wynaut",
-      "type": ["Psychic"],
-      "ability": ["Shadow Tag"],
-      "hidden_ability": "Telepathy"
-    },
-    {
-      "name": "Bonsly",
-      "type": ["Rock"],
-      "ability": ["Sturdy", "Rock Head"],
-      "hidden_ability": "Rattled"
-    },
-    {
-      "name": "Mantyke",
-      "type": ["Water", "Flying"],
-      "ability": ["Swift Swim", "Water Absorb"],
-      "hidden_ability": "Water Veil"
     },
     {
       "name": "Poochyena",
@@ -806,6 +818,12 @@
       "type": ["Bug"],
       "ability": ["Oblivious", "Tinted Lens"],
       "hidden_ability": "Prankster"
+    },
+    {
+      "name": "Budew",
+      "type": ["Grass", "Poison"],
+      "ability": ["Natural Cure", "Poison Point"],
+      "hidden_ability": "Leaf Guard"
     },
     {
       "name": "Gulpin",
@@ -946,6 +964,12 @@
       "hidden_ability": "Harvest"
     },
     {
+      "name": "Chingling",
+      "type": ["Psychic"],
+      "ability": ["Levitate"],
+      "hidden_ability": null
+    },
+    {
       "name": "Absol",
       "type": ["Dark"],
       "ability": ["Pressure", "Super Luck"],
@@ -980,18 +1004,6 @@
       "type": ["Water"],
       "ability": ["Swift Swim"],
       "hidden_ability": "Hydration"
-    },
-    {
-      "name": "Budew",
-      "type": ["Grass", "Poison"],
-      "ability": ["Natural Cure", "Poison Point"],
-      "hidden_ability": "Leaf Guard"
-    },
-    {
-      "name": "Chingling",
-      "type": ["Psychic"],
-      "ability": ["Levitate"],
-      "hidden_ability": null
     },
     {
       "name": "Starly",
@@ -1852,9 +1864,15 @@
       "hidden_ability": null
     },
     {
-      "name": "Indeedee",
+      "name": "Indeedee (Male)",
       "type": ["Psychic", "Normal"],
       "ability": ["Inner Focus", "Synchronize"],
+      "hidden_ability": "Psychic Surge"
+    },
+    {
+      "name": "Indeedee (Female)",
+      "type": ["Psychic", "Normal"],
+      "ability": ["Own Tempo", "Synchronize"],
       "hidden_ability": "Psychic Surge"
     },
     {
@@ -1918,6 +1936,18 @@
       "hidden_ability": "Guts"
     },
     {
+      "name": "Nacli",
+      "type": ["Rock"],
+      "ability": ["Purifying Salt", "Sturdy"],
+      "hidden_ability": "Clear Body"
+    },
+    {
+      "name": "Charcadet",
+      "type": ["Fire"],
+      "ability": ["Flash Fire"],
+      "hidden_ability": "Flame Body"
+    },
+    {
       "name": "Tadbulb",
       "type": ["Electric"],
       "ability": ["Own Tempo", "Static"],
@@ -1954,28 +1984,16 @@
       "hidden_ability": null
     },
     {
-      "name": "Capsakid",
-      "type": ["Grass"],
-      "ability": ["Chlorophyll", "Insomnia"],
-      "hidden_ability": "Klutz"
-    },
-    {
       "name": "Klawf",
       "type": ["Rock"],
       "ability": ["Anger Shell", "Shell Armor"],
       "hidden_ability": "Regenerator"
     },
     {
-      "name": "Nacli",
-      "type": ["Rock"],
-      "ability": ["Purifying Salt", "Sturdy"],
-      "hidden_ability": "Clear Body"
-    },
-    {
-      "name": "Charcadet",
-      "type": ["Fire"],
-      "ability": ["Flash Fire"],
-      "hidden_ability": "Flame Body"
+      "name": "Capsakid",
+      "type": ["Grass"],
+      "ability": ["Chlorophyll", "Insomnia"],
+      "hidden_ability": "Klutz"
     },
     {
       "name": "Rellor",
