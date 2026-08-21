@@ -100,14 +100,16 @@ button:hover {
 }
 
 #debug-control,
-#reset-control {
+#reset-control,
+#volume-icon {
     width: auto;
     font-size: 0.75rem;
     padding: 4px 8px;
     display: inline-block;
 }
-
+ 
 #debug-control:hover,
-#reset-control:hover {
+#reset-control:hover,
+#volume-icon:hover {
     transform: none;
 }
