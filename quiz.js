@@ -470,6 +470,63 @@ function addResetControl() {
     document.body.appendChild(resetLink);
 }
 
+// Volume.
+
+function addVolumeControl() {
+    const wrapper = document.createElement("div");
+    wrapper.id = "volume-control";
+    wrapper.style.position = "fixed";
+    wrapper.style.top = "10px";
+    wrapper.style.right = "10px";
+    wrapper.style.display = "flex";
+    wrapper.style.alignItems = "center";
+    wrapper.style.gap = "6px";
+    wrapper.style.zIndex = "1000";
+ 
+    const icon = document.createElement("button");
+    icon.id = "volume-icon";
+    icon.style.opacity = "0.6";
+    icon.style.fontSize = "0.75em";
+    icon.style.padding = "4px 8px";
+    icon.style.cursor = "pointer";
+ 
+    const slider = document.createElement("input");
+    slider.type = "range";
+    slider.min = "0";
+    slider.max = "1";
+    slider.step = "0.01";
+    slider.value = bgm.volume;
+    slider.id = "volume-slider";
+    slider.style.width = "80px";
+    slider.style.cursor = "pointer";
+    slider.style.display = "none";
+    slider.style.opacity = "0.8";
+ 
+    const setIcon = () => {
+        icon.innerText = bgm.volume == 0 ? "🔇" : "🔊";
+    };
+    setIcon();
+ 
+    const showSlider = () => { slider.style.display = "inline-block"; };
+    const hideSlider = () => { slider.style.display = "none"; };
+    wrapper.addEventListener("mouseenter", showSlider);
+    wrapper.addEventListener("mouseleave", hideSlider);
+    icon.onclick = () => {
+        slider.style.display = slider.style.display === "none" ? "inline-block" : "none";
+    };
+ 
+    slider.oninput = () => {
+        const value = parseFloat(slider.value);
+        bgm.volume = value;
+        localStorage.setItem("bgm_volume", value);
+        setIcon();
+    };
+ 
+    wrapper.appendChild(icon);
+    wrapper.appendChild(slider);
+    document.body.appendChild(wrapper);
+}
+
 // Debug
 
 function addDebugControl() {
@@ -540,6 +597,7 @@ window.onload = () => {
     }, { once: true });
 
     addResetControl();
+	addVolumeControl();
     addDebugControl();
 
     const saved = loadQuizState();
