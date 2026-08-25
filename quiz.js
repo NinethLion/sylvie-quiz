@@ -5,6 +5,7 @@ let currentStep = 0;
 let currentPokemon = null;
 let mainType = "";
 let secondTypes = [];
+let firstPlaceTypes = [];
 
 // These get locked in the moment the quiz ends.
 
@@ -230,10 +231,12 @@ function selectOption(opt) {
 function calculateFinalResult() {
     const sortedTypes = Object.keys(typeScores).sort((a, b) => typeScores[b] - typeScores[a]);
 
-    mainType = sortedTypes[0];
-    const secondScore = typeScores[sortedTypes[1]];
-    secondTypes = sortedTypes.filter((t, i) => i > 0 && typeScores[t] === secondScore);
+    const topScore = typeScores[sortedTypes[0]];
+    firstPlaceTypes = sortedTypes.filter(t => typeScores[t] === topScore);
 
+    mainType = sortedTypes[0];
+    const secondScore = typeScores[sortedTypes.find(t => typeScores[t] < topScore)] || 0;
+    secondTypes = sortedTypes.filter(t => !firstPlaceTypes.includes(t) && typeScores[t] === secondScore);
     generateResultSet();
 }
 
@@ -453,6 +456,7 @@ function saveQuizState(accepted) {
     const state = {
         mainType: mainType,
         secondTypes: secondTypes,
+        firstPlaceTypes: firstPlaceTypes, // Save it
         typeScores: typeScores,
         primary: primaryPokemon,
         alternates: alternatePokemons,
@@ -634,6 +638,7 @@ window.onload = () => {
     if (saved) {
         mainType = saved.mainType;
         secondTypes = saved.secondTypes;
+		firstPlaceTypes = saved.firstPlaceTypes || [];
         if (saved.typeScores) typeScores = saved.typeScores;
         primaryPokemon = saved.primary;
         alternatePokemons = saved.alternates;
