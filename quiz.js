@@ -11,10 +11,28 @@ let secondTypes = [];
 let primaryPokemon = null;
 let alternatePokemons = [];
 
+// Larvitar doesn't need to be in the other file tbh.
+
+const LARVITAR = {
+    name: "Larvitar",
+    type: ["Rock", "Ground"],
+    ability: ["Guts"],
+    hidden_ability: "Sand Veil"
+};
+
+// Set link. Since Discord invite links expire, this will need to be updates.
+
+const DISCORD_URL = "https://discord.gg/mzwkwDdkW";
+
 // Change this if you want different music.
 
 const bgm = new Audio('bgm.mp3');
 bgm.loop = true;
+
+// Volume settings.
+
+const savedVolume = parseFloat(localStorage.getItem("bgm_volume"));
+bgm.volume = isNaN(savedVolume) ? 0.5 : savedVolume;
 
 // Linking this document to the Pokemon list.
 
@@ -235,6 +253,18 @@ function getPokemonByType(type, excludeNames = []) {
 function pickRandomUnique(pool, count) {
     const shuffled = [...pool].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
+}
+
+function isLarvitarEligible() {
+    return firstPlaceTypes.includes("Ground") && firstPlaceTypes.includes("Rock");
+}
+ 
+function getMainPool(excludeNames = []) {
+    let pool = getPokemonByType(mainType, excludeNames);
+    if (isLarvitarEligible() && !excludeNames.includes(LARVITAR.name)) {
+        pool = [...pool, LARVITAR];
+    }
+    return pool;
 }
 
 function generateResultSet() {
@@ -565,7 +595,6 @@ function addDebugControl() {
     document.body.appendChild(debugPanel);
     document.body.appendChild(debugBtn);
 
-    // Restore whether the panel was open before the last refresh.
     if (localStorage.getItem("debug_panel_open") === "true") {
         debugPanel.style.display = "block";
         updateDebugPanel();
