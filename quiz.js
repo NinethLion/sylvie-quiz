@@ -283,7 +283,7 @@ function generateResultSet() {
         return;
     }
 
-    const primaryChosen = mainPool[Math.floor(Math.random() * mainPool.length)];
+const primaryChosen = mainPool[Math.floor(Math.random() * mainPool.length)];
     primaryPokemon = {
         name: primaryChosen.name,
         type: primaryChosen.type,
@@ -291,12 +291,9 @@ function generateResultSet() {
     };
 
     const usedNames = [primaryPokemon.name];
-
-    // Adjust allocation depending on whether there was a tie for 1st place
     const isTie = firstPlaceTypes.length > 1;
-    const mainAltCount = isTie ? 2 : 4;    // 1 primary + 2 alts = 3 total for mainType
-    const secondAltCount = isTie ? 3 : 2;  // 3 alts for secondary tied type(s)
-
+    const mainAltCount = isTie ? 2 : 4;   
+    const secondAltCount = isTie ? 3 : 2; 
     const mainAltPool = getMainPool(usedNames);
     const mainAltPicks = pickRandomUnique(mainAltPool, mainAltCount);
     usedNames.push(...mainAltPicks.map(p => p.name));
