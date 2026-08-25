@@ -455,6 +455,14 @@ function showResultsPage(pokemon) {
     copyBtn.innerText = "Copy Results";
     copyBtn.onclick = () => copyToClipboard(summary, copyBtn);
     optionsContainer.appendChild(copyBtn);
+	
+	const discordBtn = document.createElement("button");
+    discordBtn.innerText = "Join the Discord";
+    discordBtn.className = "discord-button";
+    discordBtn.onclick = () => {
+        window.open(DISCORD_URL, "_blank");
+    };
+    optionsContainer.appendChild(discordBtn);
 }
 
 // Results lock in when someone finishes the quiz, not when they pick a Pokemon.
