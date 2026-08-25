@@ -234,9 +234,14 @@ function calculateFinalResult() {
     const topScore = typeScores[sortedTypes[0]];
     firstPlaceTypes = sortedTypes.filter(t => typeScores[t] === topScore);
 
-    mainType = sortedTypes[0];
-    const secondScore = typeScores[sortedTypes.find(t => typeScores[t] < topScore)] || 0;
-    secondTypes = sortedTypes.filter(t => !firstPlaceTypes.includes(t) && typeScores[t] === secondScore);
+    if (firstPlaceTypes.length > 1) {
+        mainType = firstPlaceTypes[Math.floor(Math.random() * firstPlaceTypes.length)];
+        secondTypes = firstPlaceTypes.filter(t => t !== mainType);
+    } else {
+        mainType = sortedTypes[0];
+        const secondScore = typeScores[sortedTypes.find(t => typeScores[t] < topScore)] || 0;
+        secondTypes = sortedTypes.filter(t => typeScores[t] === secondScore);
+    }
     generateResultSet();
 }
 
@@ -287,13 +292,18 @@ function generateResultSet() {
 
     const usedNames = [primaryPokemon.name];
 
+    // Adjust allocation depending on whether there was a tie for 1st place
+    const isTie = firstPlaceTypes.length > 1;
+    const mainAltCount = isTie ? 2 : 4;    // 1 primary + 2 alts = 3 total for mainType
+    const secondAltCount = isTie ? 3 : 2;  // 3 alts for secondary tied type(s)
+
     const mainAltPool = getMainPool(usedNames);
-    const mainAltPicks = pickRandomUnique(mainAltPool, 4);
+    const mainAltPicks = pickRandomUnique(mainAltPool, mainAltCount);
     usedNames.push(...mainAltPicks.map(p => p.name));
 
     let secondAltPicks = [];
     if (secondTypes.length > 0) {
-        const slots = 2;
+        const slots = secondAltCount;
         const perType = Math.floor(slots / secondTypes.length);
         const remainder = slots % secondTypes.length;
         const orderedTypes = [...secondTypes].sort(() => 0.5 - Math.random());
