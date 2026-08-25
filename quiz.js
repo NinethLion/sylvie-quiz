@@ -291,9 +291,9 @@ const primaryChosen = mainPool[Math.floor(Math.random() * mainPool.length)];
     };
 
     const usedNames = [primaryPokemon.name];
-    const isTie = firstPlaceTypes.length > 1;
-    const mainAltCount = isTie ? 2 : 4;   
-    const secondAltCount = isTie ? 3 : 2; 
+const isTie = firstPlaceTypes.length > 1;
+    const mainAltCount = isTie ? 3 : 4;
+    const secondAltCount = isTie ? 3 : 2;
     const mainAltPool = getMainPool(usedNames);
     const mainAltPicks = pickRandomUnique(mainAltPool, mainAltCount);
     usedNames.push(...mainAltPicks.map(p => p.name));
