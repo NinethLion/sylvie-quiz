@@ -1,9 +1,8 @@
 body {
-    background-image: url("Background.gif"); 
+    background-image: url("bg.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    
     color: white;
     font-family: 'PMDFont';
     src: url('PKMD.ttf');
@@ -13,6 +12,23 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("Background.gif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
 }
 
 @font-face {
@@ -45,18 +61,6 @@ body {
     margin-bottom: 20px;
     image-rendering: pixelated; 
     text-shadow: 2px 2px 0px #000;
-}
-
-#character-portrait {
-    width: 80px;
-    height: 80px;
-    border: 3px solid #f8f8f8;
-    background-color: #262626;
-    position: absolute;
-    top: -50px;
-    left: 20px;
-    z-index: 20;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
 }
 
 #quiz-container {
