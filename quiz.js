@@ -266,10 +266,10 @@ function getMainPool(excludeNames = []) {
     }
     return pool;
 }
-
+ 
 function generateResultSet() {
-    const mainPool = getPokemonByType(mainType);
-
+    const mainPool = getMainPool();
+ 
     if (mainPool.length === 0) {
         console.error("No Pokémon found for type " + mainType);
         return;
@@ -284,7 +284,7 @@ function generateResultSet() {
 
     const usedNames = [primaryPokemon.name];
 
-    const mainAltPool = getPokemonByType(mainType, usedNames);
+    const mainAltPool = getMainPool(usedNames);
     const mainAltPicks = pickRandomUnique(mainAltPool, 4);
     usedNames.push(...mainAltPicks.map(p => p.name));
 
@@ -515,7 +515,7 @@ function addVolumeControl() {
  
     const icon = document.createElement("button");
     icon.id = "volume-icon";
-    icon.style.opacity = "0.6";
+    icon.style.opacity = "1";
     icon.style.fontSize = "0.75em";
     icon.style.padding = "4px 8px";
     icon.style.cursor = "pointer";
