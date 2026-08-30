@@ -714,8 +714,6 @@ function addSecretUnlock() {
     trigger.style.cursor = "default";
     trigger.style.background = "transparent";
     trigger.style.zIndex = "998";
-    // Uncomment while testing to see exactly where the hitbox lands:
-    // trigger.style.background = "rgba(255, 0, 0, 0.3)";
  
     trigger.onclick = () => {
         goomyClickCount++;
