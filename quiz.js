@@ -478,7 +478,7 @@ function showResultsPage(pokemon) {
     const resultBox = document.createElement("div");
     resultBox.className = "result-box";
     resultBox.style.whiteSpace = "pre-line";
-    resultBox.innerText = summary;
+    resultBox.innerText = summary.trim();
     optionsContainer.appendChild(resultBox);
 
     const copyBtn = document.createElement("button");
