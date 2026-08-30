@@ -151,6 +151,42 @@ let typeScores = {
     Poison: 0, Rock: 0, Ground: 0
 };
 
+// Intro
+
+const introLines = [
+    "Where... are you? A gentle, warm light begins to filter through the dark...",
+    "A faint voice echoes from somewhere far away.",
+    "It asks you to look inward, to the rhythm of your own spirit.",
+    "\"Answer each question truthfully. Be open. Be honest.\"",
+    "\"Do not overthink your answers. Instinct reveals far more than careful thought ever could.\"",
+    "Echoes of choices and paths begin to swirl through your thoughts...",
+    "\"Close your eyes, heed the call, and uncover your true nature.\""
+];
+ 
+let introStep = 0;
+ 
+function renderIntro() {
+    const optionsContainer = document.getElementById("options-container");
+    optionsContainer.innerHTML = "";
+ 
+    const line = introLines[introStep];
+ 
+    typeWriter(line, () => {
+        const continueBtn = document.createElement("button");
+        continueBtn.innerText = introStep < introLines.length - 1 ? "..." : "Begin";
+        continueBtn.className = "intro-continue";
+        continueBtn.onclick = () => {
+            introStep++;
+            if (introStep < introLines.length) {
+                renderIntro();
+            } else {
+                renderQuestion();
+            }
+        };
+        optionsContainer.appendChild(continueBtn);
+    });
+}
+
 // This code lets the questions work properly.
 
 function renderQuestion() {
@@ -426,21 +462,15 @@ function showResultsPage(pokemon) {
     const textElement = document.getElementById("quiz-text");
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
-
+ 
     const isOriginal = primaryPokemon && pokemon.name === primaryPokemon.name;
-
-    const summary = isOriginal
-        ? `
+    const soulShapeName = pokemon.name + (isOriginal ? "*" : "");
+ 
+    const summary = `
         [Quiz Result]
-        Pokémon: ${pokemon.name}
-        Type: ${pokemon.type.join(" / ")}
+        Soul Shape: ${soulShapeName}
         Ability: ${pokemon.ability}
-        (This was your original pick.)
-    `
-        : `
-        [Quiz Result]
-        Original Pick: ${primaryPokemon.name} (${primaryPokemon.type.join(" / ")}) — Ability: ${primaryPokemon.ability}
-        Final Pick: ${pokemon.name} (${pokemon.type.join(" / ")}) — Ability: ${pokemon.ability}
+        Anima Affinity: ${mainType}
     `;
 
     textElement.innerText = "Your result has been recorded!";
@@ -638,18 +668,100 @@ function updateDebugPanel() {
 
 // This is stuff on load in.
 
+let goomyClickCount = 0;
+let goomyClickTimer = null;
+
+const GOOMY_HITBOX = {
+    left: 0.2756,
+    right: 0.3088,
+    top: 0.7198,
+    bottom: 0.8100,
+    imageNaturalWidth: 8000,
+    imageNaturalHeight: 4494
+};
+ 
+function positionGoomyTrigger() {
+    const trigger = document.getElementById("secret-trigger");
+    if (!trigger) return;
+ 
+    const viewW = window.innerWidth;
+    const viewH = window.innerHeight;
+    const imgW = GOOMY_HITBOX.imageNaturalWidth;
+    const imgH = GOOMY_HITBOX.imageNaturalHeight;
+	
+	
+    const scale = Math.max(viewW / imgW, viewH / imgH);
+    const renderedW = imgW * scale;
+    const renderedH = imgH * scale;
+    const offsetX = (viewW - renderedW) / 2;
+    const offsetY = (viewH - renderedH) / 2;
+ 
+    const left = offsetX + GOOMY_HITBOX.left * renderedW;
+    const right = offsetX + GOOMY_HITBOX.right * renderedW;
+    const top = offsetY + GOOMY_HITBOX.top * renderedH;
+    const bottom = offsetY + GOOMY_HITBOX.bottom * renderedH;
+ 
+    trigger.style.left = left + "px";
+    trigger.style.top = top + "px";
+    trigger.style.width = (right - left) + "px";
+    trigger.style.height = (bottom - top) + "px";
+}
+ 
+function addSecretUnlock() {
+    const trigger = document.createElement("div");
+    trigger.id = "secret-trigger";
+    trigger.style.position = "fixed";
+    trigger.style.cursor = "default";
+    trigger.style.background = "transparent";
+    trigger.style.zIndex = "998";
+    // Uncomment while testing to see exactly where the hitbox lands:
+    // trigger.style.background = "rgba(255, 0, 0, 0.3)";
+ 
+    trigger.onclick = () => {
+        goomyClickCount++;
+        clearTimeout(goomyClickTimer);
+        goomyClickTimer = setTimeout(() => { goomyClickCount = 0; }, 1500);
+ 
+        if (goomyClickCount >= 3) {
+            goomyClickCount = 0;
+            const isUnlocked = localStorage.getItem("tester_controls_unlocked") === "true";
+            setTesterControlsVisible(!isUnlocked);
+        }
+    };
+ 
+    document.body.appendChild(trigger);
+    positionGoomyTrigger();
+    window.addEventListener("resize", positionGoomyTrigger);
+}
+ 
+function setTesterControlsVisible(visible) {
+    localStorage.setItem("tester_controls_unlocked", visible ? "true" : "false");
+ 
+    const reset = document.getElementById("reset-control");
+    const debug = document.getElementById("debug-control");
+    if (reset) reset.style.display = visible ? "inline-block" : "none";
+    if (debug) debug.style.display = visible ? "inline-block" : "none";
+ 
+    if (!visible) {
+        const panel = document.getElementById("debug-panel");
+        if (panel) panel.style.display = "none";
+    }
+}
+
 window.onload = () => {
     bgm.play().catch(() => console.log("Autoplay blocked. Music will start on next click."));
     document.body.addEventListener('click', () => {
         if (bgm.paused) bgm.play();
     }, { once: true });
-
+ 
     addResetControl();
 	addVolumeControl();
     addDebugControl();
-
+	addSecretUnlock();
+    setTesterControlsVisible(localStorage.getItem("tester_controls_unlocked") === "true");
+ 
     const saved = loadQuizState();
-
+ 
     if (saved) {
         mainType = saved.mainType;
         secondTypes = saved.secondTypes;
@@ -658,15 +770,16 @@ window.onload = () => {
         primaryPokemon = saved.primary;
         alternatePokemons = saved.alternates;
         currentPokemon = saved.current;
-
+ 
         updateDebugPanel();
-
+ 
         if (saved.accepted) {
             showResultsPage(currentPokemon);
         } else {
             displayFinalReveal(currentPokemon);
         }
     } else {
-        renderQuestion();
+        renderIntro();
     }
 };
+ 
