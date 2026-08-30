@@ -14,6 +14,7 @@ body {
     overflow: hidden;
     position: relative;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -29,10 +30,12 @@ body::before {
     z-index: -1;
     pointer-events: none;
 }
+
 @font-face {
     font-family: 'PMDFont';
     src: url('PKMD.ttf');
 }
+
 #dialogue-box {
 	width: 800px;
 	height: 450px;
@@ -50,23 +53,23 @@ body::before {
 	justify-content: flex-start;
 	overflow: hidden;
 }
+
 #quiz-text {
     font-family: 'PMDFont', monospace;
     font-size: 36px;
     line-height: 1.2;
-    width: 600px;
-    max-width: 100%;
-    margin: 0 auto 15px auto;
-    padding: 0 18px;
-    box-sizing: border-box;
-    text-align: left;
+	width: 600px;
+	margin: 30px auto 15px;
+    margin-bottom: 15px;
     image-rendering: pixelated; 
     text-shadow: 2px 2px 0px #000;
 }
+
 #quiz-container {
     position: relative;
     width: 800px;
 }
+
 button {
     background: rgba(48, 48, 48, 0.6); 
     color: #e0e0e0;
@@ -84,6 +87,7 @@ button {
     transition: all 0.2s ease;
 	box-sizing: border-box;
 }
+
 #options-container {
     display: flex;
     flex-direction: column;
@@ -94,11 +98,13 @@ button {
 	max-height: 320px;
 	overflow-y: auto;
 }
+
 button:hover {
     background: #7b1fa2;
     border-color: #f8f8f8;
     transform: scale(1.02);
 }
+
 #debug-control,
 #reset-control,
 #volume-icon {
@@ -113,6 +119,7 @@ button:hover {
 #volume-icon:hover {
     transform: none;
 }
+
 .intro-continue {
     width: auto;
     align-self: center;
@@ -120,6 +127,7 @@ button:hover {
     text-align: center;
     padding: 6px 24px;
 }
+
 .result-box {
     font-family: 'PMDFont', monospace;
     font-size: 28px;
