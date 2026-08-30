@@ -258,9 +258,9 @@ button:hover {
     padding: 6px 24px;
 }
 
-.result-box {
+result-box {
     font-family: 'PMDFont', monospace;
-    font-size: 34px;
+    font-size: 24px;
     line-height: 1.3;
     text-shadow: 2px 2px 0px #000;
     margin-bottom: 10px;
