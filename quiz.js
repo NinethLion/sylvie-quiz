@@ -21,6 +21,31 @@ const LARVITAR = {
     hidden_ability: "Sand Veil"
 };
 
+// Fairy pool
+
+const FAIRY_LOCKED_NAMES = [
+    "Alolan Vulpix",
+    "Azurill",
+    "Carbink",
+    "Cottonee",
+    "Dedenne",
+    "Eevee",
+    "Galarian Ponyta",
+    "Hatenna",
+    "Igglybuff",
+    "Impidimp",
+    "Koffing",
+    "Mime Jr.",
+    "Mimikyu",
+    "Morelull",
+    "Popplio",
+    "Ralts"
+];
+ 
+function isFairyLocked(name) {
+    return FAIRY_LOCKED_NAMES.includes(name);
+}
+
 // Set link. Since Discord invite links expire, this will need to be updates.
 
 const DISCORD_URL = "https://discord.gg/mzwkwDdkW";
@@ -309,6 +334,14 @@ function getMainPool(excludeNames = []) {
         pool = [...pool, LARVITAR];
     }
     return pool;
+}
+
+function getMainAltPool(excludeNames = []) {
+    return getMainPool(excludeNames).filter(p => !isFairyLocked(p.name));
+}
+ 
+function getSecondAltPool(type, excludeNames = []) {
+    return getPokemonByType(type, excludeNames).filter(p => !isFairyLocked(p.name));
 }
  
 function generateResultSet() {
