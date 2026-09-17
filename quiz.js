@@ -363,7 +363,7 @@ const primaryChosen = mainPool[Math.floor(Math.random() * mainPool.length)];
 const isTie = firstPlaceTypes.length > 1;
     const mainAltCount = isTie ? 3 : 4;
     const secondAltCount = isTie ? 3 : 2;
-    const mainAltPool = getMainPool(usedNames);
+    const mainAltPool = getMainAltPool(usedNames);
     const mainAltPicks = pickRandomUnique(mainAltPool, mainAltCount);
     usedNames.push(...mainAltPicks.map(p => p.name));
 
@@ -377,7 +377,7 @@ const isTie = firstPlaceTypes.length > 1;
         orderedTypes.forEach((t, idx) => {
             const count = perType + (idx < remainder ? 1 : 0);
             if (count > 0) {
-                const pool = getPokemonByType(t, usedNames);
+                const pool = getSecondAltPool(t, usedNames);
                 const picks = pickRandomUnique(pool, count);
                 secondAltPicks.push(...picks);
                 usedNames.push(...picks.map(p => p.name));
