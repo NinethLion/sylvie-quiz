@@ -15,7 +15,7 @@ let alternatePokemons = [];
 // Larvitar doesn't need to be in the other file tbh.
 
 const LARVITAR = {
-    name: "Larvitar",
+    name: "Larvitar (RARE)",
     type: ["Rock", "Ground"],
     ability: ["Guts"],
     hidden_ability: "Sand Veil"
@@ -23,7 +23,7 @@ const LARVITAR = {
 
 // Fairy pool
 
-const FAIRY_LOCKED_NAMES = [
+const FAIRY_POOL = [
     "Alolan Vulpix",
     "Azurill",
     "Carbink",
@@ -42,13 +42,13 @@ const FAIRY_LOCKED_NAMES = [
     "Ralts"
 ];
  
-function isFairyLocked(name) {
-    return FAIRY_LOCKED_NAMES.includes(name);
+function isFairy(name) {
+    return FAIRY_POOL.includes(name);
 }
 
-// Set link. Since Discord invite links expire, this will need to be updates.
+// Set link. Since Discord invite links expire, this will need to be updated.
 
-const DISCORD_URL = "https://discord.gg/mzwkwDdkW";
+// const DISCORD_URL = "https://discord.gg/mzwkwDdkW";
 
 // Change this if you want different music.
 
@@ -159,7 +159,7 @@ const typeQuestions = [
         ]
     },
     {
-        question: "Soon, you will join the world of Pokémon. If you could bring one thing from your former life, what would it be?",
+        question: "If you could bring one thing from your current life into the world of Pokemon, what would it be?",
         options: [
             { text: "Entertainment, like a good book", typeWeight: { Bug: 3, Electric: 2, Normal: 1 } },
             { text: "Something practical, like a compass", typeWeight: { Ground: 3, Rock: 2, Normal: 1 } },
@@ -337,11 +337,41 @@ function getMainPool(excludeNames = []) {
 }
 
 function getMainAltPool(excludeNames = []) {
-    return getMainPool(excludeNames).filter(p => !isFairyLocked(p.name));
+    return getMainPool(excludeNames).filter(p => !isFairy(p.name));
 }
  
 function getSecondAltPool(type, excludeNames = []) {
-    return getPokemonByType(type, excludeNames).filter(p => !isFairyLocked(p.name));
+    return getPokemonByType(type, excludeNames).filter(p => !isFairy(p.name));
+}
+
+function getRandomWeighted(pool) {
+    if (!pool.length) return null;
+    
+    const totalWeight = pool.reduce((sum, p) => sum + (p.weight ?? 1), 0);
+    let random = Math.random() * totalWeight;
+
+    for (const p of pool) {
+        const weight = p.weight ?? 1;
+        if (random < weight) return p;
+        random -= weight;
+    }
+    return pool[pool.length - 1];
+}
+
+function pickWeightedUnique(pool, count) {
+    const tempPool = [...pool];
+    const selected = [];
+
+    while (selected.length < count && tempPool.length > 0) {
+        const picked = getRandomWeighted(tempPool);
+        if (!picked) break;
+        
+        selected.push(picked);
+        const index = tempPool.findIndex(p => p.name === picked.name);
+        if (index !== -1) tempPool.splice(index, 1);
+    }
+
+    return selected;
 }
  
 function generateResultSet() {
@@ -352,7 +382,7 @@ function generateResultSet() {
         return;
     }
 
-const primaryChosen = mainPool[Math.floor(Math.random() * mainPool.length)];
+const primaryChosen = getRandomWeighted(mainPool);
     primaryPokemon = {
         name: primaryChosen.name,
         type: primaryChosen.type,
@@ -364,7 +394,7 @@ const isTie = firstPlaceTypes.length > 1;
     const mainAltCount = isTie ? 3 : 4;
     const secondAltCount = isTie ? 3 : 2;
     const mainAltPool = getMainAltPool(usedNames);
-    const mainAltPicks = pickRandomUnique(mainAltPool, mainAltCount);
+    const mainAltPicks = pickWeightedUnique(mainAltPool, mainAltCount);
     usedNames.push(...mainAltPicks.map(p => p.name));
 
     let secondAltPicks = [];
@@ -378,7 +408,7 @@ const isTie = firstPlaceTypes.length > 1;
             const count = perType + (idx < remainder ? 1 : 0);
             if (count > 0) {
                 const pool = getSecondAltPool(t, usedNames);
-                const picks = pickRandomUnique(pool, count);
+                const picks = pickWeightedUnique(pool, count);
                 secondAltPicks.push(...picks);
                 usedNames.push(...picks.map(p => p.name));
             }
@@ -424,7 +454,7 @@ function showAlternatives() {
     const optionsContainer = document.getElementById("options-container");
 
     optionsContainer.innerHTML = "";
-    typeWriter("Here are a few other Pokémon that might fit you better:", () => {
+    typeWriter("Other Pokémon that may suit you better:", () => {
         alternatePokemons
             .filter(alt => alt.name !== currentPokemon.name)
             .forEach(alt => {
@@ -506,7 +536,7 @@ function showResultsPage(pokemon) {
         Anima Affinity: ${mainType}
     `;
 
-    textElement.innerText = "Your result has been recorded!";
+    textElement.innerText = "Your result has been recorded! Please save a screenshot for later.";
 
     const resultBox = document.createElement("div");
     resultBox.className = "result-box";
@@ -515,17 +545,17 @@ function showResultsPage(pokemon) {
     optionsContainer.appendChild(resultBox);
 
     const copyBtn = document.createElement("button");
-    copyBtn.innerText = "Copy Results";
+    copyBtn.innerText = "Copy Text Result";
     copyBtn.onclick = () => copyToClipboard(summary, copyBtn);
     optionsContainer.appendChild(copyBtn);
 	
-	const discordBtn = document.createElement("button");
-    discordBtn.innerText = "Join the Discord";
-    discordBtn.className = "discord-button";
-    discordBtn.onclick = () => {
-        window.open(DISCORD_URL, "_blank");
-    };
-    optionsContainer.appendChild(discordBtn);
+	// const discordBtn = document.createElement("button");
+    // discordBtn.innerText = "Join the Discord";
+    // discordBtn.className = "discord-button";
+    // discordBtn.onclick = () => {
+        // window.open(DISCORD_URL, "_blank");
+    // };
+    // optionsContainer.appendChild(discordBtn);
 }
 
 // Results lock in when someone finishes the quiz, not when they pick a Pokemon.
@@ -699,7 +729,7 @@ function updateDebugPanel() {
     debugPanel.innerText = output;
 }
 
-// This is stuff on load in.
+// Goomy
 
 let goomyClickCount = 0;
 let goomyClickTimer = null;
@@ -779,6 +809,8 @@ function setTesterControlsVisible(visible) {
     }
 }
 
+// This is stuff on load in.
+
 window.onload = () => {
     bgm.play().catch(() => console.log("Autoplay blocked. Music will start on next click."));
     document.body.addEventListener('click', () => {
@@ -813,4 +845,5 @@ window.onload = () => {
         renderIntro();
     }
 };
+ 
  
