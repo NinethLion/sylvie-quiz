@@ -552,7 +552,6 @@ function showResultsPage(pokemon) {
     copyBtn.innerText = "Copy Text Result";
     copyBtn.onclick = () => copyToClipboard(summary, copyBtn);
     optionsContainer.appendChild(copyBtn);
-}
 	
 	// const discordBtn = document.createElement("button");
     // discordBtn.innerText = "Join the Discord";
